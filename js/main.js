@@ -13,15 +13,9 @@ import genRandomNums from './genRandomNums'
 import populateHiddenNumberCons from './populateHiddenNumberCons'
 import handleCellClick from './handleCellClick'
 import {hiddenNumberArr, cellsArr, overlaysArr} from './htmlElements'
- 4
+
 // game data
 export let gameArr = genRandomNums(1, 10, 12)
-
-
-// game settings
-const settings = {
-   difficulty: 'easy'
-}
 
 
 // initial render

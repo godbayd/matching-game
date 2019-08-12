@@ -1,8 +1,7 @@
 import {c} from './utils'
-import {gameArr} from './main' // circular
-import shared from './main'
 import {cellsArr, overlaysArr} from './htmlElements'
 
+const matchedIndexes = []
 
 // choice state
 let numberIsRevealedOnBoard = false,
@@ -10,7 +9,27 @@ let numberIsRevealedOnBoard = false,
     indexOfFirstRevealed = null,
     revealedNumber = null
 
-const handleCellClick = e => {
+const revealNumber = (overlay) =>
+    overlay.style.opacity = 0.3;
+
+const hideNumber = (overlay) =>
+    overlay.style.opacity = 0;
+
+const resetChoiceState = () => {
+    numberIsRevealedOnBoard = false
+    indexOfFirstRevealed = null
+    indexOfSecondRevealed = null
+    revealedNumber = null
+}
+
+const updateMatchedIndexCache = (firstChoice, secondChoice) => {
+    if(matchedIndexes.length === 0 || matchedIndexes.length > 0)  // necessary
+        [firstChoice, secondChoice].map(
+            a => matchedIndexes.push(a)
+        );
+}
+
+const handleCellClick = (e, gameArr) => {
     /*
        keep track of clicked cell by index of cell and index of
        hidden number
@@ -21,42 +40,38 @@ const handleCellClick = e => {
    const indexOfCurrentTarget = cellsArr.indexOf(e.currentTarget),
          hiddenNumber = gameArr[indexOfCurrentTarget]
 
+
    const compareHiddenNumbers = (firstChoice, secondChoice) => {
       if (firstChoice === secondChoice) {
-         console.log('matches')
-         matchedIndexes.push(indexOfFirstRevealed, indexOfCurrentTarget)
-         // reset choice state
-         numberIsRevealedOnBoard = false,
-         indexOfFirstRevealed = null,
-         indexOfSecondRevealed = null,
-         revealedNumber = null
+         c('matches')
+         updateMatchedIndexCache(indexOfFirstRevealed, indexOfCurrentTarget)
+         c(matchedIndexes)
+         resetChoiceState()
       }
       else {
-         console.log('doesnt match')
-         overlaysArr[indexOfFirstRevealed].style.opacity = 0.3
-         overlaysArr[indexOfSecondRevealed].style.opacity = 0.3
-         // reset choice state
-         numberIsRevealedOnBoard = false,
-         indexOfFirstRevealed = null,
-         indexOfSecondRevealed = null,
-         revealedNumber = null
+         c('doesnt match')
+         revealNumber(overlaysArr[indexOfFirstRevealed])
+         revealNumber(overlaysArr[indexOfSecondRevealed])
+         resetChoiceState()
       }
    }
+
 
    if (numberIsRevealedOnBoard === false) {
       numberIsRevealedOnBoard = true
       indexOfFirstRevealed = indexOfCurrentTarget
       revealedNumber = hiddenNumber
-      overlaysArr[indexOfCurrentTarget].style.opacity = 0
+      hideNumber(overlaysArr[indexOfCurrentTarget])
    }
    else {
       // if not already revealed
       if (indexOfCurrentTarget !== indexOfFirstRevealed) {
          indexOfSecondRevealed = indexOfCurrentTarget
-         overlaysArr[indexOfCurrentTarget].style.opacity = 0
+         hideNumber(overlaysArr[indexOfCurrentTarget])
          compareHiddenNumbers(revealedNumber, hiddenNumber)
       }
    }
+
 
 }
 export default handleCellClick;

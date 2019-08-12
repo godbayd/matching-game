@@ -22,11 +22,7 @@ export let gameArr = genRandomNums(1, 10, 12)
 populateHiddenNumberCons(gameArr, hiddenNumberArr)
 
 
-// game state
-const matchedIndexes = []
-
-
 // handle events
 cellsArr.map(cell => {
-   cell.addEventListener('click', handleCellClick)
+   cell.addEventListener('click', e => handleCellClick(e, gameArr))
 })

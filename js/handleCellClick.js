@@ -1,4 +1,8 @@
-import {cellsArr, overlaysArr, gameArr} from './main'
+import {c} from './utils'
+import {gameArr} from './main' // circular
+import shared from './main'
+import {cellsArr, overlaysArr} from './htmlElements'
+
 
 // choice state
 let numberIsRevealedOnBoard = false,

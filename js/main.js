@@ -1,24 +1,27 @@
+/*
+    nothing should be exported from main.js
+    this will cause circular dependencies.
+    instead, if certain things need to be shared
+    amongst many modules, make a file for it and
+    import (from) it where needed
+*/
+
 import '../index.pug'
 import '../styles/main.scss'
 import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'
 import populateHiddenNumberCons from './populateHiddenNumberCons'
 import handleCellClick from './handleCellClick'
-
-
-// html element arrays
-const hiddenNumberArr   = selectAll('#game .cell .hidden-number-container')
-export const cellsArr    = selectAll('#game .cell')
-export const overlaysArr = selectAll('#game .cell .overlay')
+import {hiddenNumberArr, cellsArr, overlaysArr} from './htmlElements'
+ 4
+// game data
+export let gameArr = genRandomNums(1, 10, 12)
 
 
 // game settings
 const settings = {
    difficulty: 'easy'
 }
-
-
-export let gameArr = genRandomNums(1, 10, 12)
 
 
 // initial render

@@ -29,12 +29,18 @@ let timeState = {
         - output 00
 */
 
-//(60 * 3/*# of minutes*/)
 /*
     how clocks count
     on minute - 1:00
     then      - 0:59 until 0:00
 */
+
+const updateTimerHtml = (seconds, minutes) => {
+    const secStr = seconds.toString()
+    let sec = secStr.length === 1 ? '0' + secStr : seconds;
+    minutesDiv.innerHTML = minutes;
+    secondsDiv.innerHTML = sec;
+}
 
 if (timeState.get('seconds') === 60) timeState.decrementOne('minutes');
 
@@ -54,8 +60,14 @@ setInterval(() => {
     }
 
     if (secondsElapsed <= 120) {
-        console.log(minutesState + ' ' + secondsState)
+        updateTimerHtml(secondsState, minutesState)
     }
+    /*
+        when timer ends
+        if (secondsElapsed === 120) {
+
+        }
+    */
 
 }, 1000)
 

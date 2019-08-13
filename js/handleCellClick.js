@@ -27,7 +27,9 @@ const handleCellClick = (e, gameArr) => {
           clickedOverlayElem   = overlaysArr[indexOfCurrentTarget],
           notAlreadyChosen     =
             matchedIndexesCache.indexOf(indexOfCurrentTarget) === -1 &&
-            indexOfCurrentTarget !== choiceState.get('firstChoiceIndex');
+            indexOfCurrentTarget !== choiceState.get('firstChoiceIndex'),
+          allMatchesFound =
+            matchedIndexesCache.length / 2 === (cellsArr.length / 2) - 1;
 
 
     if (onFirstChoice && notAlreadyChosen) {
@@ -50,6 +52,9 @@ const handleCellClick = (e, gameArr) => {
 
 
         if (numbersMatch) {
+            if (allMatchesFound) {
+                console.log('all matches found')
+            }
             updateMatchedIndexCache(
                 choiceState.get('firstChoiceIndex'),
                 indexOfCurrentTarget

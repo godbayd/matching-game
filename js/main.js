@@ -13,6 +13,8 @@ import genRandomNums from './genRandomNums'
 import populateHiddenNumberCons from './populateHiddenNumberCons'
 import handleCellClick from './handleCellClick'
 import {hiddenNumberArr, cellsArr, overlaysArr} from './htmlElements'
+// import './test'
+
 
 // game data
 export let gameArr = genRandomNums(1, 10, 12)

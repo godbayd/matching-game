@@ -1,12 +1,22 @@
 import {c} from './utils'
-import {minutesDiv, secondsDiv} from './htmlElements'
+import {minutesDiv, secondsDiv, cellsArr} from './htmlElements'
+import {matchedIndexesCache} from './gameState'
 
 
-const runTimer = (duration) => {
+const updateTimerHtml = (seconds, minutes) => {
+    const secStr = seconds.toString()
+    let sec = secStr.length === 1 ? '0' + secStr : seconds;
+    minutesDiv.innerHTML = minutes;
+    secondsDiv.innerHTML = sec;
+}
+
+
+const runTimer = (numberOfMinutes) => {
+
     const start = Date.now();
 
     let timeState = {
-        minutes: duration,
+        minutes: numberOfMinutes,
         seconds: 60,
         get: function(key){
             return this[key]
@@ -17,14 +27,6 @@ const runTimer = (duration) => {
         decrementOne: function(unitOfTime) {
             this.set(unitOfTime, this.get(unitOfTime) - 1)
         }
-    }
-
-
-    const updateTimerHtml = (seconds, minutes) => {
-        const secStr = seconds.toString()
-        let sec = secStr.length === 1 ? '0' + secStr : seconds;
-        minutesDiv.innerHTML = minutes;
-        secondsDiv.innerHTML = sec;
     }
 
 
@@ -46,20 +48,21 @@ const runTimer = (duration) => {
             timeState.set('seconds', 60);
         }
 
-        if (secondsElapsed <= (duration * 60)) {
+        if (secondsElapsed <= (numberOfMinutes * 60)) {
             updateTimerHtml(secondsState, minutesState)
         }
-        /*
-            when timer ends
-            if (secondsElapsed === 120) {
 
+        if (secondsElapsed === (numberOfMinutes * 60)) { // when timer ends
+            if (matchedIndexesCache.length < cellsArr.length) {
+                c('Out of time \:\(')
             }
-        */
+        }
 
     }, 1000)
+
 }
 
 
 export const handleStartTimerBtnClick = e => {
-    runTimer(3)
+    runTimer(1)
 }

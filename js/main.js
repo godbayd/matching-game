@@ -12,7 +12,10 @@ import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'
 import populateHiddenNumberCons from './populateHiddenNumberCons'
 import handleCellClick from './handleCellClick'
-import {hiddenNumberArr, cellsArr, overlaysArr} from './htmlElements'
+import {hiddenNumberArr, cellsArr, overlaysArr, startTimerBtn} from './htmlElements'
+import {handleStartTimerBtnClick} from './timer'
+import './timer'
+
 // import './test'
 
 
@@ -28,3 +31,5 @@ populateHiddenNumberCons(gameArr, hiddenNumberArr)
 cellsArr.map(cell => {
    cell.addEventListener('click', e => handleCellClick(e, gameArr))
 })
+
+startTimerBtn.addEventListener('click', handleStartTimerBtnClick)

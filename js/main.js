@@ -7,6 +7,7 @@
 */
 
 import '../index.pug'
+import '../pug-includes/starting-page.pug'
 import '../styles/main.scss'
 import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'

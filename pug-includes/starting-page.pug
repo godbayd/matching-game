@@ -1,2 +1,13 @@
 #starting-page
-    
+    h1.page-title Javascript Matching Game
+    .difficulty-options-container
+        label(for="difficulty").radio-label
+            input(type="radio" name="difficulty" value="easy" id="easy-radio-btn" checked)
+            | &nbsp; easy
+        label(for="difficulty").radio-label
+            input(type="radio" name="difficulty" value="medium" id="medium-radio-btn")
+            | &nbsp; medium
+        label(for="difficulty").radio-label
+            input(type="radio" name="difficulty" value="hard" id="hard-radio-btn")
+            | &nbsp; hard
+    button#start-game-btn Start Game

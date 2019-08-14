@@ -26,3 +26,11 @@ export const choiceState = {
         this.secondChoiceIndex = null;
     }
 }
+
+
+/*
+    Timer state
+*/
+export const timerState = {
+    numberOfMinutes: null
+}

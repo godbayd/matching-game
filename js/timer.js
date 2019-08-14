@@ -1,6 +1,6 @@
 import {c} from './utils'
 import {minutesDiv, secondsDiv, cellsArr} from './htmlElements'
-import {matchedIndexesCache} from './gameState'
+import {matchedIndexesCache, timerState} from './gameState'
 
 
 const updateTimerHtml = (seconds, minutes) => {
@@ -18,7 +18,7 @@ const runTimer = (numberOfMinutes) => {
     let timeState = {
         minutes: numberOfMinutes,
         seconds: 60,
-        get: function(key){
+        get: function(key) {
             return this[key]
         },
         set: function(key, val) {

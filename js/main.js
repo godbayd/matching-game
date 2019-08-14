@@ -25,6 +25,7 @@ import {timerState} from './gameState'
 import {handleStartTimerBtnClick} from './timer'
 import './timer' // may not need
 import './starter-page'
+import {flashHiddenNumbers} from './flash-hidden-numbers'
 
 
 // game data
@@ -43,5 +44,6 @@ cellsArr.map(cell => {
 
 startGameBtn.addEventListener('click', () => {
     startingPageDiv.style.display = 'none'
+    flashHiddenNumbers()
     handleStartTimerBtnClick()
 })

@@ -1,9 +1,10 @@
 ## Current 
-- make a scss-modules branch in git
+- make a scss-modules branch in git [check]
 - break the scss down into modular components
 - merge with starting-page and continue with starting page
+
 # To do
-- create timer state in gameState and add a duration property so that the timer can be configured dynamically
+- create timer state in gameState and add a duration property so that the timer can be configured dynamically [check]
 - Build Settings page
   - Build html start page where settings can be configured before start of game
   - start page will ask for difficulty level

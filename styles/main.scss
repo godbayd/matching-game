@@ -20,16 +20,13 @@ html, body {
 }
 
 $cell-size: 100px;
+
+@import './modules/starting-page';
+@import './modules/board';
+
 #game {
     position: relative;
     height: 100vh;
-    #starting-page {
-        position: absolute;
-        top: 0;
-        left: 0;
-        @extend %hun;
-        background-color: white;
-    }
     .timer-container {
         display: flex;
         align-items: center;
@@ -45,33 +42,4 @@ $cell-size: 100px;
             display: flex;
         }
     }
-   .board {
-       padding: 10px;
-       display: inline-grid;
-       grid-template-columns: 1fr 1fr 1fr 1fr;
-       grid-gap: 10px;
-       .cell {
-           position: relative;
-           width: $cell-size;
-           height: $cell-size;
-           background-color: grey;
-           overflow: hidden; // opt
-           .hidden-number-container, .overlay {
-               position: absolute;
-               top: 0;
-               left: 0;
-               @extend %hun;
-           }
-           .hidden-number-container {
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               background-color: white;
-           }
-           .overlay {
-               background-color: black;
-               opacity: 0.3;
-           }
-       }
-   }
 }

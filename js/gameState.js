@@ -32,5 +32,11 @@ export const choiceState = {
     Timer state
 */
 export const timerState = {
-    numberOfMinutes: null
+    numberOfMinutes: null,
+    get: function(key){
+        return this[key]
+    },
+    set: function(key, val) {
+        this[key] = val
+    },
 }

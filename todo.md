@@ -1,9 +1,13 @@
-## Current 
-- [x] make a scss-modules branch in git [check]
-- [x] break the scss down into modular components
-- [x] merge with starting-page and continue with starting page
+# To Do
 
-# To do
+## Current Tasks
+- define game difficulty levels
+- [x] update gameState when either start button is clicked or individual radion button is clicked, which ever is more suitable
+- queue timer when start game button is clicked
+- present board when game button is clicked
+- timer will need to be programmed to respond to floating point times, less than 1 minute. Hard difficulty will pass a 0.5 (half a minute) to the timer, so this needs to adapt to these <1min times
+
+## General
 - [x] create timer state in gameState and add a duration property so that the timer can be configured dynamically 
 - [x] Build Settings page
   - [x] Build html start page where settings can be configured before start of game
@@ -16,3 +20,4 @@
 ## keep in mind for down the road
 - game loop
 - load content in a way that there is no unwanted flash of unrelavent content
+- on start page, tell end user that after the start button is clicked, they will have a brief countdown to the game. After the countdown will be a brief flash of all the hidden numbers. After the numbers are hidden, the timer will start. -> give option to not show this alert again and store the state of it in local storage

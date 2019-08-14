@@ -5,13 +5,14 @@
 
 # To do
 - [x] create timer state in gameState and add a duration property so that the timer can be configured dynamically 
-- Build Settings page
-  - Build html start page where settings can be configured before start of game
-  - start page will ask for difficulty level
-  - add difficulty level state to gameState
-  - start page will have begin button that will replace the temp start timer in the .timer-container element used for testing. 
+- [x] Build Settings page
+  - [x] Build html start page where settings can be configured before start of game
+  - [x] start page will ask for difficulty level
+  - [x] add difficulty level state to gameState
+  - [x] start page will have begin button that will replace the temp start timer in the .timer-container element used for testing. 
   - when begin button is clicked, the start page will leave and the game board will enter. 
   - when the game board enters, it will flash all of the numbers very briefly and then hide them and start the timer. 
 
 ## keep in mind for down the road
 - game loop
+- load content in a way that there is no unwanted flash of unrelavent content

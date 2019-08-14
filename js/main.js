@@ -15,7 +15,8 @@ import populateHiddenNumberCons from './populateHiddenNumberCons'
 import handleCellClick from './handleCellClick'
 import {hiddenNumberArr, cellsArr, overlaysArr, startTimerBtn} from './htmlElements'
 import {handleStartTimerBtnClick} from './timer'
-import './timer'
+import './timer' // may not need
+import './starter-page'
 
 // import './test'
 

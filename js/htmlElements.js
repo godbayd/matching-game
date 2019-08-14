@@ -10,3 +10,10 @@ export const overlaysArr = selectAll('#game .board .cell .overlay')
 export const startTimerBtn = select('#game .timer-container .start-timer')
 export const minutesDiv = select('#game .timer-container .time-display .minutes')
 export const secondsDiv = select('#game .timer-container .time-display .seconds')
+
+// starter-page elements
+export const startingPageDiv = select('#starting-page')
+export const easyRadioBtn = select('#starting-page #easy-radio-btn')
+export const mediumRadioBtn = select('#starting-page #medium-radio-btn')
+export const hardRadioBtn = select('#starting-page #hard-radio-btn')
+export const startGameBtn = select('#start-game-btn')

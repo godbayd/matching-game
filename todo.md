@@ -1,21 +1,24 @@
 # To Do
 
 ## Current Tasks
-- define game difficulty levels
+- [ ] define game difficulty levels
 - [x] update gameState when either start button is clicked or individual radion button is clicked, which ever is more suitable
-- queue timer when start game button is clicked
-- present board when game button is clicked
-- timer will need to be programmed to respond to floating point times, less than 1 minute. Hard difficulty will pass a 0.5 (half a minute) to the timer, so this needs to adapt to these <1min times
+- [x] queue timer when start game button is clicked
+- [x] present board when game button is clicked
+- [x] update .timer-display .minutes html with the initial time from gameState
 
-## General
-- [x] create timer state in gameState and add a duration property so that the timer can be configured dynamically 
+## Today's Pre-defined Tasks
+- [x] create timer state in gameState and add a duration property so that the timer can be configured dynamically
 - [x] Build Settings page
   - [x] Build html start page where settings can be configured before start of game
   - [x] start page will ask for difficulty level
   - [x] add difficulty level state to gameState
-  - [x] start page will have begin button that will replace the temp start timer in the .timer-container element used for testing. 
-  - when begin button is clicked, the start page will leave and the game board will enter. 
-  - when the game board enters, it will flash all of the numbers very briefly and then hide them and start the timer. 
+  - [x] start page will have begin button that will replace the temp start timer in the .timer-container element used for testing.
+  - [x] when begin button is clicked, the start page will leave and the game board will enter.
+  - when the game board enters, it will flash all of the numbers very briefly and then hide them and start the timer.
+
+## Near future
+ - Timer needs to be programmed to respond to floating point times, less than 1 minute. Hard difficulty will pass a 0.5 (half a minute) to the timer, so this needs to adapt to these <1min times
 
 ## keep in mind for down the road
 - game loop

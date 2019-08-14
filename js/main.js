@@ -13,12 +13,18 @@ import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'
 import populateHiddenNumberCons from './populateHiddenNumberCons'
 import handleCellClick from './handleCellClick'
-import {hiddenNumberArr, cellsArr, overlaysArr, startTimerBtn} from './htmlElements'
+import {
+    hiddenNumberArr,
+    cellsArr,
+    overlaysArr,
+    startGameBtn,
+    startingPageDiv,
+    minutesDiv
+} from './htmlElements'
+import {timerState} from './gameState'
 import {handleStartTimerBtnClick} from './timer'
 import './timer' // may not need
 import './starter-page'
-
-// import './test'
 
 
 // game data
@@ -27,6 +33,7 @@ export let gameArr = genRandomNums(1, 10, 12)
 
 // initial render
 populateHiddenNumberCons(gameArr, hiddenNumberArr)
+minutesDiv.innerHTML = timerState.get('numberOfMinutes')
 
 
 // handle events
@@ -34,4 +41,7 @@ cellsArr.map(cell => {
    cell.addEventListener('click', e => handleCellClick(e, gameArr))
 })
 
-startTimerBtn.addEventListener('click', handleStartTimerBtnClick)
+startGameBtn.addEventListener('click', () => {
+    startingPageDiv.style.display = 'none'
+    handleStartTimerBtnClick()
+})

@@ -64,5 +64,5 @@ const runTimer = (numberOfMinutes) => {
 
 
 export const handleStartTimerBtnClick = e => {
-    runTimer(1)
+    runTimer(timerState.get('numberOfMinutes'))
 }

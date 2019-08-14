@@ -32,7 +32,7 @@ export const choiceState = {
     Timer state
 */
 export const timerState = {
-    numberOfMinutes: null,
+    numberOfMinutes: 2, // initalized because the default is easy
     get: function(key){
         return this[key]
     },

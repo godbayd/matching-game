@@ -1,6 +1,6 @@
 import {c} from './utils'
 
-const countdown = () => {
+export const countdown = () => {
     const start = performance.now()
     const handleCountdownInterval = setInterval(() => {
         const elapsedSecs = Math.floor((performance.now() - start) / 1000),

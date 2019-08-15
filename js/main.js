@@ -6,9 +6,15 @@
     import (from) it where needed
 */
 
+// pug includes
 import '../index.pug'
 import '../pug-includes/starting-page.pug'
+import '../pug-includes/countdown-box.pug'
+
+// scss modules
 import '../styles/main.scss'
+
+// js modules
 import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'
 import populateHiddenNumberCons from './populateHiddenNumberCons'

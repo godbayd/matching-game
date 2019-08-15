@@ -4,8 +4,10 @@
 - [x] initial render of timer html is 1:0 should be 1:00. Fix format
 - [x] add countdown.js
 - [x] add an setInterval that counts down from 3
-- [ ] put setInterval into function
+- [x] put setInterval into function
+- [ ] create countdown box pug component
 - [ ] export this function and call it in start btn click listener
+- a promise may be useful for all these nested callbacks. countdown -> flashHiddenNumbers -> startTimer
 
 
 ## Today's Pre-defined Tasks

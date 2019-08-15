@@ -23,6 +23,7 @@ $cell-size: 100px;
 
 @import './modules/starting-page';
 @import './modules/board';
+@import './modules/countdown-box';
 
 #game {
     position: relative;

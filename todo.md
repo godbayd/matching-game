@@ -1,6 +1,7 @@
 # To Do
 
 ## Current Tasks
+- [ ] initial render of timer html is 1:0 should be 1:00. Fix format
 
 ## Today's Pre-defined Tasks
 - [x] start timer after flash (times currently starts at the same time as the flash)

@@ -34,7 +34,6 @@ export let gameArr = genRandomNums(1, 10, 12)
 
 // initial render
 populateHiddenNumberCons(gameArr, hiddenNumberArr)
-minutesDiv.innerHTML = timerState.get('numberOfMinutes')
 
 
 // handle events

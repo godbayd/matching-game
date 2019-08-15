@@ -1,5 +1,6 @@
 import {c} from './utils'
-import {cellsArr, overlaysArr, startingPageDiv} from './htmlElements'
+import {cellsArr, overlaysArr, startingPageDiv, minutesDiv, secondsDiv} from './htmlElements'
+import {timerState} from './gameState'
 
 // for testing
 // startingPageDiv.style.display = 'none'
@@ -16,6 +17,11 @@ export const flashHiddenNumbers = (flashDuration, startTimerCallback) => {
 
     // initial
     showOverlays()
+    minutesDiv.innerHTML = timerState.get('numberOfMinutes') < 1 ?
+        0 :
+        timerState.get('numberOfMinutes');
+    secondsDiv.innerHTML = timerState.get('numberOfMinutes') < 1 ?
+        timerState.get('numberOfMinutes') * 60: 0;
 
     // hide overlay and start timer
     setTimeout(() => {

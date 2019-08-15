@@ -16,8 +16,8 @@ const runTimer = (numberOfMinutes) => {
     const start = Date.now();
 
     let timeState = {
-        minutes: numberOfMinutes,
-        seconds: 60,
+        minutes: numberOfMinutes < 1 ? 0 : numberOfMinutes,
+        seconds: numberOfMinutes >= 1 ? 60 : 60 * numberOfMinutes,
         get: function(key) {
             return this[key]
         },
@@ -29,6 +29,7 @@ const runTimer = (numberOfMinutes) => {
         }
     }
 
+    console.log(timeState)
 
     if (timeState.get('seconds') === 60) timeState.decrementOne('minutes');
 

@@ -23,9 +23,10 @@ import {
 } from './htmlElements'
 import {timerState} from './gameState'
 import {handleStartTimerBtnClick} from './timer'
+import {flashHiddenNumbers} from './flash-hidden-numbers'
 import './timer' // may not need
 import './starter-page'
-import {flashHiddenNumbers} from './flash-hidden-numbers'
+import './countdown'
 
 
 // game data

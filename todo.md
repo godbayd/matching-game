@@ -2,6 +2,11 @@
 
 ## Current Tasks
 - [x] initial render of timer html is 1:0 should be 1:00. Fix format
+- [x] add countdown.js
+- [x] add an setInterval that counts down from 3
+- [ ] put setInterval into function
+- [ ] export this function and call it in start btn click listener
+
 
 ## Today's Pre-defined Tasks
 - [x] start timer after flash (times currently starts at the same time as the flash)

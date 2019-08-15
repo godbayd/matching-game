@@ -17,11 +17,13 @@ export const flashHiddenNumbers = (flashDuration, startTimerCallback) => {
 
     // initial
     showOverlays()
+
+    // initial timer display render
     minutesDiv.innerHTML = timerState.get('numberOfMinutes') < 1 ?
         0 :
         timerState.get('numberOfMinutes');
     secondsDiv.innerHTML = timerState.get('numberOfMinutes') < 1 ?
-        timerState.get('numberOfMinutes') * 60: 0;
+        timerState.get('numberOfMinutes') * 60: '00';
 
     // hide overlay and start timer
     setTimeout(() => {

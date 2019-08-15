@@ -32,7 +32,7 @@ import {handleStartTimerBtnClick} from './timer'
 import {flashHiddenNumbers} from './flash-hidden-numbers'
 import './timer' // may not need
 import './starter-page'
-import './countdown'
+import {countdown} from './countdown'
 
 
 // game data
@@ -56,6 +56,6 @@ startGameBtn.addEventListener('click', () => {
         so that the timer can be called to start in
         setTimout in flashHiddenNumbers
     */
-    flashHiddenNumbers(1300, handleStartTimerBtnClick)
+    countdown(() => flashHiddenNumbers(1300, handleStartTimerBtnClick))
 
 })

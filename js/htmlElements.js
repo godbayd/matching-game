@@ -17,3 +17,7 @@ export const easyRadioBtn = select('#starting-page #easy-radio-btn')
 export const mediumRadioBtn = select('#starting-page #medium-radio-btn')
 export const hardRadioBtn = select('#starting-page #hard-radio-btn')
 export const startGameBtn = select('#start-game-btn')
+
+// countdown
+export const countdownBoxDiv = select('#countdown-box')
+export const countdownCountDiv = select('#countdown-box .count')

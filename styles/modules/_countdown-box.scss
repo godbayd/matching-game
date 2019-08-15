@@ -1,6 +1,6 @@
 #countdown-box {
+    display: none;
     &, .modal {
-        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -10,6 +10,7 @@
     left: 0;
     @extend %hun;
     .modal {
+        display: flex;
         @extend %hun;
         background-color: lightgray;
     }

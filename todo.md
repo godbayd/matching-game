@@ -5,15 +5,15 @@
 - [x] add countdown.js
 - [x] add an setInterval that counts down from 3
 - [x] put setInterval into function
-- [ ] create countdown box pug component
-- [ ] export this function and call it in start btn click listener
+- [x] create countdown box pug component
+- [x] export this function and call it in start btn click listener
 - a promise may be useful for all these nested callbacks. countdown -> flashHiddenNumbers -> startTimer
 
 
 ## Today's Pre-defined Tasks
 - [x] start timer after flash (times currently starts at the same time as the flash)
 - [x] Program timer to be compatible with floating point times, less than 1 minute. Hard difficulty will pass a 0.5 (half a minute) to the timer, so this needs to adapt to these <1min times
-- [ ] add countdown feature before timer starts
+- [x] add countdown feature before timer starts
 - [ ] create win / loss alert html
 - [ ] build win / loss alert html into game logic so that when end user wins or loses the alert html fires
 - [ ] create variable for overlay opacity so that it will be easier to adjust app to full opacity for finalization when we get there. Do this or find another solution

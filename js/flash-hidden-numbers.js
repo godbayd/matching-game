@@ -12,12 +12,15 @@ const hideOverlays = () =>
 
 
 
-export const flashHiddenNumbers = (flashDuration) => {
+export const flashHiddenNumbers = (flashDuration, startTimerCallback) => {
 
     // initial
     showOverlays()
 
-    // hide overlay after duration of time
-    setTimeout(hideOverlays, 1300)
+    // hide overlay and start timer
+    setTimeout(() => {
+        hideOverlays()
+        startTimerCallback() // start timer here
+    }, flashDuration)
 
 }

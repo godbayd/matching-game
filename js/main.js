@@ -44,6 +44,12 @@ cellsArr.map(cell => {
 
 startGameBtn.addEventListener('click', () => {
     startingPageDiv.style.display = 'none'
-    flashHiddenNumbers()
-    handleStartTimerBtnClick()
+
+    /*
+        handleStartTimerBtnClick is a callback to flashHiddenNumbers
+        so that the timer can be called to start in
+        setTimout in flashHiddenNumbers
+    */
+    flashHiddenNumbers(1300, handleStartTimerBtnClick)
+
 })

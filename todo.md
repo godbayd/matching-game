@@ -3,7 +3,7 @@
 ## Current Tasks
 
 ## Today's Pre-defined Tasks
-- [ ] start timer after flash (times currently starts at the same time as the flash)
+- [x] start timer after flash (times currently starts at the same time as the flash)
 - [ ] Program timer to be compatible with floating point times, less than 1 minute. Hard difficulty will pass a 0.5 (half a minute) to the timer, so this needs to adapt to these <1min times
 - [ ] add countdown feature before timer starts
 - [ ] create win / loss alert html

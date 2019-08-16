@@ -3,12 +3,13 @@ import {cellsArr, overlaysArr} from './htmlElements'
 import {choiceState, matchedIndexesCache, timerState} from './gameState'
 import {alertWinLoss} from './win-loss-box'
 
+const showOpacity = showOpacity;
 
 const revealHiddenNumber = (elem) =>
     elem.style.opacity = 0;
 
 const hideHiddenNumber = (elem) =>
-    elem.style.opacity = 0.3;
+    elem.style.opacity = showOpacity;
 
 const compareHiddenNumbers = (firstHiddenNumber, secondHIddenNumber) =>
     firstHiddenNumber === secondHIddenNumber ? true : false;

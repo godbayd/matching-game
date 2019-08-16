@@ -25,3 +25,6 @@ export const countdownCountDiv = select('#countdown-box .count')
 // win loss alert box
 export const winLossBoxDiv = select('#win-loss-alert-box')
 export const winLossAlertDiv = select('#win-loss-alert-box .alert-text')
+
+// play again
+export const playAgainBtn = select('#play-again-btn')

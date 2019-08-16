@@ -1,7 +1,7 @@
 # To Do
 
 ## Current Tasks
-- [ ] fix unmatched second choice. When match hasnt been met, both cells should be hidden again.
+- [x] fix unmatched second choice. When match hasnt been met, both cells should be hidden again.
 - a promise may be useful for all these nested callbacks. countdown -> flashHiddenNumbers -> startTimer
 
 

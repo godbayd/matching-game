@@ -6,34 +6,39 @@
     import (from) it where needed
 */
 
+
+// import './test'
+
+// scss modules
+import '../styles/main.scss'
+
 // pug includes
 import '../index.pug'
 import '../pug-includes/starting-page.pug'
 import '../pug-includes/countdown-box.pug'
 import '../pug-includes/win-loss-box.pug'
 
-// scss modules
-import '../styles/main.scss'
-
 // js modules
 import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'
 import populateHiddenNumberCons from './populateHiddenNumberCons'
 import handleCellClick from './handleCellClick'
+import {handleStartTimerBtnClick} from './timer'
+import {handlePlayAainBtnClick} from './play-again'
 import {
     hiddenNumberArr,
     cellsArr,
     overlaysArr,
     startGameBtn,
     startingPageDiv,
-    minutesDiv
+    minutesDiv,
+    playAgainBtn
 } from './htmlElements'
 import {timerState} from './gameState'
-import {handleStartTimerBtnClick} from './timer'
 import {flashHiddenNumbers} from './flash-hidden-numbers'
+import {countdown} from './countdown'
 import './timer' // may not need
 import './starter-page'
-import {countdown} from './countdown'
 
 
 // game data
@@ -60,3 +65,4 @@ startGameBtn.addEventListener('click', () => {
     countdown(() => flashHiddenNumbers(1300, handleStartTimerBtnClick))
 
 })
+playAgainBtn.addEventListener('click', handlePlayAainBtnClick)

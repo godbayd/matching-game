@@ -1,31 +1,18 @@
 # To Do
 
 ## Current Tasks
-- [x] initial render of timer html is 1:0 should be 1:00. Fix format
-- [x] add countdown.js
-- [x] add an setInterval that counts down from 3
-- [x] put setInterval into function
-- [x] create countdown box pug component
-- [x] export this function and call it in start btn click listener
-- [x] add state to gameState that tracks whether timers still active
-- [x] if timer is still active and all matches are found, alert win
-- [x] clear timer interval
+- [ ] fix unmatched second choice. When match hasnt been met, both cells should be hidden again.
 - a promise may be useful for all these nested callbacks. countdown -> flashHiddenNumbers -> startTimer
 
 
 ## Today's Pre-defined Tasks
-- [x] start timer after flash (times currently starts at the same time as the flash)
-- [x] Program timer to be compatible with floating point times, less than 1 minute. Hard difficulty will pass a 0.5 (half a minute) to the timer, so this needs to adapt to these <1min times
-- [x] add countdown feature before timer starts
-- [x] create win / loss alert html
-- [x] build win / loss alert html into game logic so that when end user wins or loses the alert html fires
-- [x] create variable for overlay opacity so that it will be easier to adjust app to full opacity for finalization when we get there. Do this or find another solution
-
-
-## Near future
 - [ ] listen for clicks on Play again button
 - [ ] create callback for play again button listener
 - [ ] play again button listener restarts game
+- [ ] clean up code
+- [ ] plan for ui improvements
+
+## Near future
 
 
 ## keep in mind for down the road

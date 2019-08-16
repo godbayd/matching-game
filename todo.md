@@ -7,8 +7,8 @@
 - [x] put setInterval into function
 - [x] create countdown box pug component
 - [x] export this function and call it in start btn click listener
-- [ ] add state to gameState that tracks whether timers still active
-- [ ] if timer is still active and all matches are found, alert win
+- [x] add state to gameState that tracks whether timers still active
+- [x] if timer is still active and all matches are found, alert win
 - [ ] clear timer interval
 - a promise may be useful for all these nested callbacks. countdown -> flashHiddenNumbers -> startTimer
 
@@ -17,8 +17,8 @@
 - [x] start timer after flash (times currently starts at the same time as the flash)
 - [x] Program timer to be compatible with floating point times, less than 1 minute. Hard difficulty will pass a 0.5 (half a minute) to the timer, so this needs to adapt to these <1min times
 - [x] add countdown feature before timer starts
-- [ ] create win / loss alert html
-- [ ] build win / loss alert html into game logic so that when end user wins or loses the alert html fires
+- [x] create win / loss alert html
+- [x] build win / loss alert html into game logic so that when end user wins or loses the alert html fires
 - [ ] create variable for overlay opacity so that it will be easier to adjust app to full opacity for finalization when we get there. Do this or find another solution
 
 ## Near future

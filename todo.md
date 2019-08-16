@@ -6,8 +6,8 @@
 
 
 ## Today's Pre-defined Tasks
-- [ ] listen for clicks on Play again button
-- [ ] create callback for play again button listener
+- [x] listen for clicks on Play again button
+- [x] create callback for play again button listener
 - [ ] play again button listener restarts game
 - [ ] clean up code
 - [ ] plan for ui improvements

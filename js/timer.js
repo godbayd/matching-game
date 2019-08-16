@@ -36,7 +36,7 @@ const runTimer = (numberOfMinutes) => {
     if (timeState.get('seconds') === 60) timeState.decrementOne('minutes');
 
 
-    setInterval(() => {
+    const timerInterval = setInterval(() => {
 
         const delta = Date.now() - start,
               secondsElapsed = Math.floor(delta / 1000)
@@ -45,6 +45,7 @@ const runTimer = (numberOfMinutes) => {
 
         const minutesState = timeState.get('minutes'),
               secondsState = timeState.get('seconds')
+
 
         if (secondsState < 1) {
             timeState.decrementOne('minutes')
@@ -63,7 +64,7 @@ const runTimer = (numberOfMinutes) => {
                 /*
                     clear timer interval here
                 */
-
+                clearInterval(timerInterval)
                 c('Out of time \:\(')
             }
         }

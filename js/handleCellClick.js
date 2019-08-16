@@ -3,7 +3,7 @@ import {cellsArr, overlaysArr} from './htmlElements'
 import {choiceState, matchedIndexesCache, timerState} from './gameState'
 import {alertWinLoss} from './win-loss-box'
 
-const showOpacity = showOpacity;
+const showOpacity = 0.3;
 
 const revealHiddenNumber = (elem) =>
     elem.style.opacity = 0;
@@ -68,6 +68,7 @@ const handleCellClick = (e, gameArr) => {
 
 
         if (numbersDontMatch) {
+            console.log('they dont match')
             const firstClickedOverlayElem =
                 overlaysArr[choiceState.get('firstChoiceIndex')];
             [firstClickedOverlayElem, clickedOverlayElem].map(

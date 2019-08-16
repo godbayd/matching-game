@@ -10,6 +10,7 @@
 import '../index.pug'
 import '../pug-includes/starting-page.pug'
 import '../pug-includes/countdown-box.pug'
+import '../pug-includes/win-loss-box.pug'
 
 // scss modules
 import '../styles/main.scss'

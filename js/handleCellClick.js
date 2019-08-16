@@ -1,6 +1,7 @@
 import {c} from './utils'
 import {cellsArr, overlaysArr} from './htmlElements'
-import {choiceState, matchedIndexesCache} from './gameState'
+import {choiceState, matchedIndexesCache, timerState} from './gameState'
+import {alertWinLoss} from './win-loss-box'
 
 
 const revealHiddenNumber = (elem) =>
@@ -52,7 +53,8 @@ const handleCellClick = (e, gameArr) => {
 
 
         if (numbersMatch) {
-            if (allMatchesFound) {
+            if (allMatchesFound && timerState.get('active')) {
+                alertWinLoss('win')
                 console.log('all matches found')
             }
             updateMatchedIndexCache(

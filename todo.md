@@ -7,6 +7,9 @@
 - [x] put setInterval into function
 - [x] create countdown box pug component
 - [x] export this function and call it in start btn click listener
+- [ ] add state to gameState that tracks whether timers still active
+- [ ] if timer is still active and all matches are found, alert win
+- [ ] clear timer interval
 - a promise may be useful for all these nested callbacks. countdown -> flashHiddenNumbers -> startTimer
 
 

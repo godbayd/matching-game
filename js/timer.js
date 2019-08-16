@@ -1,6 +1,7 @@
 import {c} from './utils'
 import {minutesDiv, secondsDiv, cellsArr} from './htmlElements'
 import {matchedIndexesCache, timerState} from './gameState'
+import {alertWinLoss} from './win-loss-box'
 
 
 const updateTimerHtml = (seconds, minutes) => {
@@ -12,6 +13,8 @@ const updateTimerHtml = (seconds, minutes) => {
 
 
 const runTimer = (numberOfMinutes) => {
+
+    timerState.set('active', true)
 
     const start = Date.now();
 
@@ -29,7 +32,6 @@ const runTimer = (numberOfMinutes) => {
         }
     }
 
-    console.log(timeState)
 
     if (timeState.get('seconds') === 60) timeState.decrementOne('minutes');
 
@@ -55,6 +57,13 @@ const runTimer = (numberOfMinutes) => {
 
         if (secondsElapsed === (numberOfMinutes * 60)) { // when timer ends
             if (matchedIndexesCache.length < cellsArr.length) {
+                alertWinLoss('loss')
+                timerState.set('active', false)
+
+                /*
+                    clear timer interval here
+                */
+
                 c('Out of time \:\(')
             }
         }

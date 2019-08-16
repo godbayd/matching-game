@@ -24,6 +24,7 @@ $cell-size: 100px;
 @import './modules/starting-page';
 @import './modules/board';
 @import './modules/countdown-box';
+@import './modules/win-loss-box';
 
 #game {
     position: relative;

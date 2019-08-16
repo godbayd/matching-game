@@ -19,9 +19,14 @@
 - [x] add countdown feature before timer starts
 - [x] create win / loss alert html
 - [x] build win / loss alert html into game logic so that when end user wins or loses the alert html fires
-- [ ] create variable for overlay opacity so that it will be easier to adjust app to full opacity for finalization when we get there. Do this or find another solution
+- [x] create variable for overlay opacity so that it will be easier to adjust app to full opacity for finalization when we get there. Do this or find another solution
+
 
 ## Near future
+- [ ] listen for clicks on Play again button
+- [ ] create callback for play again button listener
+- [ ] play again button listener restarts game
+
 
 ## keep in mind for down the road
 - fully define game difficulty levels

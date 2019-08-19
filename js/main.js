@@ -43,28 +43,28 @@ import './starter-page'
 // game data
 mainState.set('gameArr', genRandomNums(1, 10, 12))
 
-document.body.onload = () => {
 
-    // initial render
-    populateHiddenNumberCons(mainState.get('gameArr'), hiddenNumberArr)
 
-    // handle events
-    cellsArr.map(cell => {
-       cell.addEventListener('click', handleCellClick)
-    })
 
-    startGameBtn.addEventListener('click', () => {
-        startingPageDiv.style.display = 'none'
+// initial render
+populateHiddenNumberCons(mainState.get('gameArr'), hiddenNumberArr)
 
-        /*
-            handleStartTimerBtnClick is a callback to flashHiddenNumbers
-            so that the timer can be called to start in
-            setTimout in flashHiddenNumbers
-        */
-        countdown(() => flashHiddenNumbers(1300, handleStartTimerBtnClick))
 
-    })
+// handle events
+cellsArr.map(cell => {
+   cell.addEventListener('click', handleCellClick)
+})
 
-    playAgainBtn.addEventListener('click', handlePlayAainBtnClick)
+startGameBtn.addEventListener('click', () => {
+    startingPageDiv.style.display = 'none'
 
-}
+    /*
+        handleStartTimerBtnClick is a callback to flashHiddenNumbers
+        so that the timer can be called to start in
+        setTimout in flashHiddenNumbers
+    */
+    countdown(() => flashHiddenNumbers(1300, handleStartTimerBtnClick))
+
+})
+
+playAgainBtn.addEventListener('click', handlePlayAainBtnClick)

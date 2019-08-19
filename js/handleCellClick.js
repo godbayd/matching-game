@@ -24,8 +24,6 @@ const updateMatchedIndexCache = (firstIndex, secondIndex) =>
         index => matchedIndexesCache.push(index)
     );
 
-console.log(mainState)
-
 const handleCellClick = e => {
 
     const gameArr = mainState.get('gameArr'),

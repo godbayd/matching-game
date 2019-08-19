@@ -7,7 +7,7 @@
 */
 
 
-// import './test'
+import './test'
 
 // scss modules
 import '../styles/main.scss'
@@ -34,35 +34,37 @@ import {
     minutesDiv,
     playAgainBtn
 } from './htmlElements'
-import {timerState} from './gameState'
+import {mainState, timerState} from './gameState'
 import {flashHiddenNumbers} from './flash-hidden-numbers'
 import {countdown} from './countdown'
-import './timer' // may not need
 import './starter-page'
 
 
 // game data
-export let gameArr = genRandomNums(1, 10, 12)
+mainState.set('gameArr', genRandomNums(1, 10, 12))
 
+document.body.onload = () => {
 
-// initial render
-populateHiddenNumberCons(gameArr, hiddenNumberArr)
+    // initial render
+    populateHiddenNumberCons(mainState.get('gameArr'), hiddenNumberArr)
 
+    // handle events
+    cellsArr.map(cell => {
+       cell.addEventListener('click', handleCellClick)
+    })
 
-// handle events
-cellsArr.map(cell => {
-   cell.addEventListener('click', e => handleCellClick(e, gameArr))
-})
+    startGameBtn.addEventListener('click', () => {
+        startingPageDiv.style.display = 'none'
 
-startGameBtn.addEventListener('click', () => {
-    startingPageDiv.style.display = 'none'
+        /*
+            handleStartTimerBtnClick is a callback to flashHiddenNumbers
+            so that the timer can be called to start in
+            setTimout in flashHiddenNumbers
+        */
+        countdown(() => flashHiddenNumbers(1300, handleStartTimerBtnClick))
 
-    /*
-        handleStartTimerBtnClick is a callback to flashHiddenNumbers
-        so that the timer can be called to start in
-        setTimout in flashHiddenNumbers
-    */
-    countdown(() => flashHiddenNumbers(1300, handleStartTimerBtnClick))
+    })
 
-})
-playAgainBtn.addEventListener('click', handlePlayAainBtnClick)
+    playAgainBtn.addEventListener('click', handlePlayAainBtnClick)
+
+}

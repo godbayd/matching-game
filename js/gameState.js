@@ -8,6 +8,16 @@
 
 export const matchedIndexesCache = []
 
+export const mainState = {
+    gameArr: null,
+    get: function(key){
+        return this[key]
+    },
+    set: function(key, val) {
+        this[key] = val
+    }
+}
+
 export const choiceState = {
     firstChoiceRevealedNumber: null,
     secondChoiceRevealedNumber: null,

@@ -1,6 +1,11 @@
 import {c} from './utils'
 import {cellsArr, overlaysArr} from './htmlElements'
-import {choiceState, matchedIndexesCache, timerState} from './gameState'
+import {
+    mainState,
+    choiceState,
+    matchedIndexesCache,
+    timerState
+} from './gameState'
 import {alertWinLoss} from './win-loss-box'
 
 const showOpacity = 0.3;
@@ -19,10 +24,12 @@ const updateMatchedIndexCache = (firstIndex, secondIndex) =>
         index => matchedIndexesCache.push(index)
     );
 
+console.log(mainState)
 
-const handleCellClick = (e, gameArr) => {
+const handleCellClick = e => {
 
-    const onFirstChoice        = !choiceState.get('firstChoiceRevealedNumber'),
+    const gameArr = mainState.get('gameArr'),
+          onFirstChoice        = !choiceState.get('firstChoiceRevealedNumber'),
           onSecondChoice       = choiceState.get('firstChoiceRevealedNumber'),
           indexOfCurrentTarget = cellsArr.indexOf(e.currentTarget),
           revealedNumber       = gameArr[indexOfCurrentTarget],

@@ -66,3 +66,22 @@ $cell-size: 100px;
        }
    }
 }
+
+#starting-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %hun;
+    background-color: white;
+    .difficulty-options-container {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+

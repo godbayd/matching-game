@@ -1,4 +1,5 @@
 import '../index.pug'
+import '../pug_includes/starting-page.pug'
 import '../styles/main.scss'
 import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'

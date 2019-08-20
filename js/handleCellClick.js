@@ -1,17 +1,16 @@
 import {c} from './utils'
 import {mainState, cellsState} from './gameState'
 import {cellsArr, overlaysArr} from './htmlElements'
+import {showElem, hideElem} from './updateHtml'
 
-/*
-    export const cellsState = {
-        matchedIndexesArr: [],
-        firstClickedHiddenNumber: null,
-        indexOfFirstClicked: null
-    }
-*/
+
+const resetState = () => {
+    cellsState.firstClickedHiddenNumber = null
+    cellsState.indexOfFirstClicked = null
+}
 
 export const handleCellClick = e => {
-    
+
     const indexOfClicked = cellsArr.indexOf(e.currentTarget),
           hiddenNumberOfClicked = mainState.gameArr[indexOfClicked],
           alreadyClicked = cellsState.indexOfFirstClicked === indexOfClicked,
@@ -23,7 +22,7 @@ export const handleCellClick = e => {
         if (!cellsState.firstClickedHiddenNumber) {
             cellsState.firstClickedHiddenNumber = hiddenNumberOfClicked
             cellsState.indexOfFirstClicked = indexOfClicked
-            console.log(hiddenNumberOfClicked)
+            hideElem(overlaysArr[indexOfClicked])
         }
 
         else {
@@ -31,17 +30,17 @@ export const handleCellClick = e => {
             if (hiddenNumberOfClicked === cellsState.firstClickedHiddenNumber) {
                 cellsState.matchedIndexesArr.push(cellsState.indexOfFirstClicked)
                 cellsState.matchedIndexesArr.push(indexOfClicked)
-                cellsState.firstClickedHiddenNumber = null
-                cellsState.indexOfFirstClicked = null
-                console.log('match')
-                console.log(cellsState.matchedIndexesArr)
+                hideElem(overlaysArr[indexOfClicked])
+                if (mainState.gameArr.length === cellsState.matchedIndexesArr.length) {
+                    console.log('win')
+                }
+                resetState()
             }
             // no match case
             else {
-                cellsState.firstClickedHiddenNumber = null
-                cellsState.indexOfFirstClicked = null
-                console.log('no match')
-                console.log(cellsState.matchedIndexesArr)
+                showElem(overlaysArr[indexOfClicked])
+                showElem(overlaysArr[cellsState.indexOfFirstClicked])
+                resetState()
             }
         }
 

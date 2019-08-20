@@ -4,6 +4,11 @@ export const mainState = {
 
 export const cellsState = {
     matchedIndexesArr: [],
-    firstClicked: null,
-    indexOfFirstClicked: null
+    firstClickedHiddenNumber: null,
+    indexOfFirstClicked: null,
+    resetState: function() {
+        matchedIndexesArr = []
+        firstClickedHiddenNumber = null
+        indexOfFirstClicked = null
+    }
 }

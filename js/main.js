@@ -5,7 +5,13 @@ import genRandomNums from './genRandomNums'
 import handleCellClick from './handleCellClick'
 import {mainState} from './gameState'
 import {populateCellsWithHiddenNumbers} from './updateHtml'
-import './test'
+import {
+    startEasyTimer,
+    startMediumTimer,
+    startHardTimer,
+    stopTimer
+} from './timer'
+// import './test'
 
 
 // game data

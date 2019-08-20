@@ -14,7 +14,7 @@ const timer = (startTimer, minutesDuration) => {
                   secondsElapsed = (minutesDuration * 60) - Math.floor(delta / 1000);
 
             if (secondsElapsed > 0) {
-                
+
             }
             else {
                 console.log('out of time')

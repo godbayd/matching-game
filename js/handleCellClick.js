@@ -19,6 +19,7 @@ export const handleCellClick = e => {
 
     if (!alreadyClicked && !inMatchedIndexesArr) {
 
+        // if no first choice
         if (!cellsState.firstClickedHiddenNumber) {
             cellsState.firstClickedHiddenNumber = hiddenNumberOfClicked
             cellsState.indexOfFirstClicked = indexOfClicked
@@ -30,10 +31,11 @@ export const handleCellClick = e => {
             if (hiddenNumberOfClicked === cellsState.firstClickedHiddenNumber) {
                 cellsState.matchedIndexesArr.push(cellsState.indexOfFirstClicked)
                 cellsState.matchedIndexesArr.push(indexOfClicked)
-                hideElem(overlaysArr[indexOfClicked])
+                // win case
                 if (mainState.gameArr.length === cellsState.matchedIndexesArr.length) {
                     console.log('win')
                 }
+                hideElem(overlaysArr[indexOfClicked])
                 resetState()
             }
             // no match case

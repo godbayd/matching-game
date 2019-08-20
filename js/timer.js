@@ -14,8 +14,10 @@ const timer = (startTimer, minutesDuration) => {
                   secondsElapsed = (minutesDuration * 60) - Math.floor(delta / 1000);
 
             if (secondsElapsed > 0) {
-
+                // timer html here
             }
+
+            // loss condition22
             else {
                 console.log('out of time')
                 clearInterval(timerInterval)

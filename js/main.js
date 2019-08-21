@@ -12,7 +12,8 @@ import {
     hiddenNumberArr,
     easyRadioBtn,
     mediumRadioBtn,
-    hardRadioBtn
+    hardRadioBtn,
+    startGameBtn
 } from './htmlElements'
 import {
     startEasyTimer,
@@ -20,7 +21,10 @@ import {
     startHardTimer,
     stopTimer
 } from './timer'
-import {handleDifficultyRadioButtonsClicks} from './starting-page'
+import {
+    handleDifficultyRadioButtonsClicks,
+    startGameButtonClick
+} from './starting-page'
 import './test'
 
 // game data
@@ -40,3 +44,6 @@ radioBtns.map(
         'click', handleDifficultyRadioButtonsClicks
     )
 )
+
+// start game button listener
+startGameBtn.addEventListener('click', startGameButtonClick)

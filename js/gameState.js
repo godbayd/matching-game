@@ -1,5 +1,6 @@
 export const mainState = {
-    gameArr: null
+    gameArr: null,
+    difficulty: null
 }
 
 export const cellsState = {

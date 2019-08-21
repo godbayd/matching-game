@@ -1,12 +1,6 @@
 .con
     #game
-        .timer-container
-            button.start-timer start timer
-            .time-display 
-                .minutes 3
-                | &nbsp;minutes&comma;&nbsp;
-                .seconds 00 
-                | &nbsp;seconds remaining
+        include pug_includes/timer-bar.pug
         .board
             - for(var i = 0; i < 12; i++)
                 .cell

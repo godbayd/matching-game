@@ -68,7 +68,7 @@ $cell-size: 100px;
 }
 
 #starting-page {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -84,4 +84,3 @@ $cell-size: 100px;
         align-items: flex-start;
     }
 }
-

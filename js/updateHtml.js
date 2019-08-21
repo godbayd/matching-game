@@ -1,4 +1,8 @@
-import {hiddenNumberArr} from './htmlElements'
+import {
+    hiddenNumberArr,
+    minutesDiv,
+    secondsDiv,
+} from './htmlElements'
 import {mainState} from './gameState'
 import {populateHiddenNumberCons} from './populateHiddenNumberCons'
 
@@ -18,5 +22,7 @@ export const hideElem = elem =>
 
 // timer html
 export const timerHtml = () => {
+
+    
 
 }

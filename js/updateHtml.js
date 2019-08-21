@@ -17,6 +17,6 @@ export const hideElem = elem =>
 
 
 // timer html
-export timerHtml = () => {
+export const timerHtml = () => {
 
 }

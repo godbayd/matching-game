@@ -52,6 +52,7 @@ $cell-size: 100px;
    }
 }
 
+
 #timer-bar {
     display: flex;
     width: 100%;
@@ -80,4 +81,15 @@ $cell-size: 100px;
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+#countdown-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %hun;
+    background-color: white;
 }

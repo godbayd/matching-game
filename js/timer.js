@@ -18,7 +18,7 @@ const timer = (startTimer, minutesDuration) => {
                 // timer html here
             }
 
-            // loss condition22
+            // loss condition
             else {
                 console.log('out of time')
                 clearInterval(timerInterval)

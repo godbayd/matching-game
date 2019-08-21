@@ -14,3 +14,9 @@ export const showElem = elem =>
 
 export const hideElem = elem =>
     elem.style.display = 'none';
+
+
+// timer html
+export timerHtml = () => {
+
+}

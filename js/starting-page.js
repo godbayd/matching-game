@@ -10,7 +10,7 @@ import {
     startMediumTimer,
     startHardTimer
 } from './timer'
-import {showElem, hideElem} from './updateHtml'
+import {showElem, hideElem, intialTimeHtml} from './updateHtml'
 
 const exitPage = () => hideElem(startingPageDiv)
 
@@ -28,6 +28,7 @@ export const handleDifficultyRadioButtonsClicks = e => {
         default:
             return false;
     }
+    intialTimeHtml(e.currentTarget.value)
 }
 
 export const startGameButtonClick = e => {

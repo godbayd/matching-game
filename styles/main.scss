@@ -21,21 +21,6 @@ html, body {
 
 $cell-size: 100px;
 #game {
-    .timer-container {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        width: 100%;
-        button.start-timer {
-            padding: 5px;
-            border: 1px solid black;
-            background-color: transparent;
-            margin-right: 20px;
-        }
-        .time-display {
-            display: flex;
-        }
-    }
    .board {
        padding: 10px;
        display: inline-grid;
@@ -67,8 +52,20 @@ $cell-size: 100px;
    }
 }
 
+#timer-bar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    .unit-container {
+        display: flex;
+    }
+    .unit-container:first-child {
+        margin-right: 20px;
+    }
+}
+
 #starting-page {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

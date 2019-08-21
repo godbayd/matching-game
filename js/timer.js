@@ -1,6 +1,6 @@
 import {timerHtml} from './updateHtml'
 
-const durations = {
+export const durations = {
     easy: 2,
     medium: 1,
     hard: 0.5
@@ -53,4 +53,5 @@ export const startHardTimer = () => timer(true, 0.5, durations.hard)
 
 export const stopTimer = () => timer(false)
 
-startEasyTimer()
+// test
+// startEasyTimer()

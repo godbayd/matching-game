@@ -1,13 +1,4 @@
-/*
-    for timer state:
-        if seconds is below 1
-        - set seconds to 60
-        - subtract one from minute
-
-    for time display in html
-        if seconds is 60
-        - output 00
-*/
+import {timerHtml} from './updateHtml'
 
 const durations = {
     easy: 2,
@@ -15,8 +6,19 @@ const durations = {
     hard: 0.5
 }
 
-const formatTime = (minutesDuration, secondsElapsed) => {
 
+let min = null
+let sec = null
+const formatTime = (minutesDuration, secondsElapsed) => {
+    if (min === null) min = minutesDuration < 1 ? 0 : minutesDuration - 1;
+    if (sec === null) sec = minutesDuration < 1 ? (60 * minutesDuration) : 60;
+    if (sec === 0) {
+        sec = 60
+        min--
+    }
+    sec--
+    const secOut = sec === 60 ? '00' : sec < 10 ? `0${sec}` : sec;
+    return [min, secOut].map(a => a.toString())
 }
 
 let timerInterval;
@@ -31,7 +33,8 @@ const timer = (startTimer, minutesDuration) => {
 
             if (secondsElapsed > 0) {
                 // timer html here
-                formatTime(minutesDuration, secondsElapsed)
+                timerHtml(formatTime(minutesDuration, secondsElapsed))
+                // console.log(formatTime(minutesDuration, secondsElapsed))
             }
 
             // loss condition

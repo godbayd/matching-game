@@ -21,8 +21,9 @@ export const hideElem = elem =>
 
 
 // timer html
-export const timerHtml = () => {
-
-    
-
+export const timerHtml = (timeArr) => {
+    const minutes = timeArr[0]
+    const seconds = timeArr[1]
+    minutesDiv.innerHTML = minutes
+    secondsDiv.innerHTML = seconds
 }

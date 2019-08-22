@@ -16,3 +16,7 @@ export const startGameBtn = select('#start-game-btn')
 export const timerBarDiv = select('#timer-bar')
 export const minutesDiv = select('#timer-bar .minutes')
 export const secondsDiv = select('#timer-bar .seconds')
+
+// coutdown
+export const countdownBoxContainerDiv = select('#countdown-box-container')
+export const countdownBoxDiv = select('#countdown-box-container .box')

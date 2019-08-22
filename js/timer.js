@@ -21,7 +21,7 @@ const formatTime = (minutesDuration, secondsElapsed) => {
     return [min, secOut].map(a => a.toString())
 }
 
-let timerInterval;
+export let timerInterval;
 const timer = (startTimer, minutesDuration) => {
     if (!startTimer) clearInterval(timer);
     else {

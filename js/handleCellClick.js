@@ -2,6 +2,7 @@ import {c} from './utils'
 import {mainState, cellsState} from './gameState'
 import {cellsArr, overlaysArr} from './htmlElements'
 import {showElem, hideElem} from './updateHtml'
+import {timerInterval} from './timer'
 
 
 const resetState = () => {
@@ -33,6 +34,7 @@ export const handleCellClick = e => {
                 cellsState.matchedIndexesArr.push(indexOfClicked)
                 // win case
                 if (mainState.gameArr.length === cellsState.matchedIndexesArr.length) {
+                    clearInterval(timerInterval)
                     console.log('win')
                 }
                 hideElem(overlaysArr[indexOfClicked])

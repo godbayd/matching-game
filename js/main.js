@@ -25,8 +25,9 @@ import {
 } from './timer'
 import {
     handleDifficultyRadioButtonsClicks,
-    startGameButtonClick
+    queueTimer
 } from './starting-page'
+import {startCountdown} from './countdown-box'
 import './test'
 
 // game data
@@ -47,5 +48,10 @@ radioBtns.map(
     )
 )
 
+
 // start game button listener
-startGameBtn.addEventListener('click', startGameButtonClick)
+const startGameEventSequence = () => {
+    startCountdown(queueTimer)
+}
+
+startGameBtn.addEventListener('click', startGameEventSequence)

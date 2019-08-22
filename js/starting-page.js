@@ -31,7 +31,7 @@ export const handleDifficultyRadioButtonsClicks = e => {
     intialTimeHtml(e.currentTarget.value)
 }
 
-export const startGameButtonClick = e => {
+export const queueTimer = e => {
     if (mainState.difficulty) {
         switch (mainState.difficulty) {
             case 1:

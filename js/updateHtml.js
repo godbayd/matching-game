@@ -2,6 +2,8 @@ import {
     hiddenNumberArr,
     minutesDiv,
     secondsDiv,
+    countdownBoxContainerDiv,
+    countdownBoxDiv
 } from './htmlElements'
 import {mainState} from './gameState'
 import {populateHiddenNumberCons} from './populateHiddenNumberCons'
@@ -33,4 +35,10 @@ export const timerHtml = timeArr => {
     const seconds = timeArr[1]
     minutesDiv.innerHTML = minutes
     secondsDiv.innerHTML = seconds
+}
+
+
+// countdown
+export const countHtml = (secondsElapsed) => {
+    countdownBoxDiv.innerHTML = secondsElapsed
 }

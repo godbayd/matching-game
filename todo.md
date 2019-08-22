@@ -1,8 +1,5 @@
 # To Do
 
-## Win / loss with timer stuff
- - [ ] create Win condition in timer that only wins if timer is still running
-
 ## Countdown stuff
  - [ ] finish countdown function in countdown-box.js
  - [ ] create unary function in main.js to house countdown function which takes timer function as a callback so that they execute consecutively.

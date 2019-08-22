@@ -29,7 +29,7 @@ const timer = (startTimer, minutesDuration) => {
         timerInterval = setInterval(() => {
             const delta = performance.now() - start,
                   secondsElapsed = (minutesDuration * 60) - Math.floor(delta / 1000);
-                  // console.log(secondsElapsed)
+                  console.log(secondsElapsed)
 
             if (secondsElapsed > 0) {
                 // timer html here

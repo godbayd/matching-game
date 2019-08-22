@@ -1,11 +1,18 @@
-const startCountdown = cb => {
+export const startCountdown = cb => {
     const start = performance.now()
-    const countdown = setInterval(() => {
-        const delta = performance.now() - start;
-        const secondsElapsed = 4 - (Math.floor(delta) / 1000);
-        if (secondsElapsed < 1) {
-            clearInterval(countdown);
-            // start timer
+    const coutdownInterval = setInterval(() => {
+        const delta = performance.now() - start,
+              secondsElapsed = 4 - Math.floor(delta / 1000);
+
+        if (secondsElapsed > 0) {
+            console.log(secondsElapsed)
+            // update html
         }
-    })
+
+        else {
+            clearInterval(coutdownInterval)
+            if (cb) cb();
+        }
+
+    }, 1000)
 }

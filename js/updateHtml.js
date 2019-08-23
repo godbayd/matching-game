@@ -3,7 +3,8 @@ import {
     minutesDiv,
     secondsDiv,
     countdownBoxContainerDiv,
-    countdownBoxDiv
+    countdownBoxDiv,
+    overlaysArr
 } from './htmlElements'
 import {mainState} from './gameState'
 import {populateHiddenNumberCons} from './populateHiddenNumberCons'
@@ -41,4 +42,13 @@ export const timerHtml = timeArr => {
 // countdown
 export const countHtml = (secondsElapsed) => {
     countdownBoxDiv.innerHTML = secondsElapsed
+}
+
+// flash hidden numbers
+export flashHiddenNumbers = cb => {
+    overlaysArr.map(overlay => hideElem(overlay))
+    setTimeout(() => {
+        overlaysArr.map(overlay => showElem(overlay))
+        cb()
+    }, 1000)
 }

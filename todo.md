@@ -1,7 +1,6 @@
 # To Do
 
 ## hidden numbers flash
-- [ ] put timerInterval in gameState and refactor accordingly. clearInterval is called in handleCellClick with timerInterval
 - [ ] in updateHtml.js create function called flashHiddenNumbers
 - [ ] in flashHiddenNumbers function:
     - [ ] use hideElem to hide all overlays

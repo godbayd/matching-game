@@ -7,7 +7,10 @@ import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'
 import {handleCellClick} from './handleCellClick'
 import {mainState} from './gameState'
-import {populateCellsWithHiddenNumbers} from './updateHtml'
+import {
+    populateCellsWithHiddenNumbers,
+    flashHiddenNumbers
+} from './updateHtml'
 import {
     cellsArr,
     overlaysArr,
@@ -30,6 +33,7 @@ import {
 import {startCountdown} from './countdown-box'
 import './test'
 
+
 // game data
 mainState.gameArr = genRandomNums(1, 10, 12)
 
@@ -37,8 +41,10 @@ mainState.gameArr = genRandomNums(1, 10, 12)
 // populate cells with hidden numbers
 populateCellsWithHiddenNumbers()
 
+
 // cells event listener
 cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
+
 
 // radio buttons event listener
 const radioBtns = [easyRadioBtn, mediumRadioBtn, hardRadioBtn]
@@ -51,7 +57,7 @@ radioBtns.map(
 
 // start game button listener
 const startGameEventSequence = () => {
-    startCountdown(queueTimer)
+    startCountdown(flashHiddenNumbers(queueTimer))
 }
 
 startGameBtn.addEventListener('click', startGameEventSequence)

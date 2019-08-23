@@ -11,9 +11,9 @@ export const startCountdown = cb => {
         if (secondsElapsed > 0) countHtml(secondsElapsed);
 
         else {
+            if (cb) cb();
             clearInterval(coutdownInterval)
             hideElem(countdownBoxContainerDiv)
-            if (cb) cb();
         }
 
     }, 1000)

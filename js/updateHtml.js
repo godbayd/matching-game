@@ -45,7 +45,7 @@ export const countHtml = (secondsElapsed) => {
 }
 
 // flash hidden numbers
-export flashHiddenNumbers = cb => {
+export const flashHiddenNumbers = cb => {
     overlaysArr.map(overlay => hideElem(overlay))
     setTimeout(() => {
         overlaysArr.map(overlay => showElem(overlay))

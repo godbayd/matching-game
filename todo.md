@@ -1,10 +1,16 @@
 # To Do
 
-## hidden numbers flash
-- [ ] flashHiddenNumbers is set into place and for some reason countdown function calling it immediately and not after like its programmed to do. Fix this.
+## Win / loss alert box
+- [ ] create win-loss-alert-box.pug with a play again button
+- [ ] create winLossAlertBox.js
+    - [ ] in main.js create a click listener on playAgainBtn
 
 ## play again
 - [ ] write list for play again stuff
+
+## hidden numbers flash
+- [x] flashHiddenNumbers is set into place and for some reason countdown function calling it immediately and not after like its programmed to do. Fix this.
+
 
 ## Countdown stuff
  - [x] finish countdown function in countdown-box.js

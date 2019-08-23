@@ -2,11 +2,6 @@
 
 ## hidden numbers flash
 - [ ] flashHiddenNumbers is set into place and for some reason countdown function calling it immediately and not after like its programmed to do. Fix this.
-- [ ] in updateHtml.js create function called flashHiddenNumbers
-- [ ] in flashHiddenNumbers function:
-    - [ ] use hideElem to hide all overlays
-    - [ ] setTimeout for some time and when the times up use showElem to bring back overlays
-- [ ] add flashHiddenNumbers to startGameEventSequence
 
 ## play again
 - [ ] write list for play again stuff

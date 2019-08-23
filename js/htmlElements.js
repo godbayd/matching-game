@@ -20,3 +20,8 @@ export const secondsDiv = select('#timer-bar .seconds')
 // coutdown
 export const countdownBoxContainerDiv = select('#countdown-box-container')
 export const countdownBoxDiv = select('#countdown-box-container .box')
+
+// win loss
+export const winLossAlertBoxDiv = select('#win-loss-alert-box')
+export const winLossAlertDiv = select('#win-loss-alert-box .alert')
+export const playAgainBtn = select('#play-again-btn')

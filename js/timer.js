@@ -1,5 +1,5 @@
 import {timerHtml} from './updateHtml'
-
+import {showWinLossAlertBox} from './win-loss-alert.js'
 export const durations = {
     easy: 2,
     medium: 1,
@@ -41,6 +41,7 @@ const timer = (startTimer, minutesDuration) => {
             else {
                 console.log('out of time')
                 clearInterval(timerInterval)
+                showWinLossAlertBox('lose')
             }
 
         }, 1000)

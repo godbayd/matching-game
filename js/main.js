@@ -2,6 +2,7 @@ import '../index.pug'
 import '../pug_includes/starting-page.pug'
 import '../pug_includes/timer-bar.pug'
 import '../pug_includes/countdown-box.pug'
+import '../pug_includes/win-loss-alert-box.pug'
 import '../styles/main.scss'
 import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'
@@ -20,7 +21,8 @@ import {
     hardRadioBtn,
     startGameBtn,
     //test
-    startingPageDiv
+    startingPageDiv,
+    playAgainBtn
 } from './htmlElements'
 import {
     startEasyTimer,

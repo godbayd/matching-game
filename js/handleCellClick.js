@@ -3,6 +3,7 @@ import {mainState, cellsState} from './gameState'
 import {cellsArr, overlaysArr} from './htmlElements'
 import {showElem, hideElem} from './updateHtml'
 import {timerInterval} from './timer'
+import {showWinLossAlertBox} from './win-loss-alert.js'
 
 
 const resetState = () => {
@@ -35,6 +36,7 @@ export const handleCellClick = e => {
                 // win case
                 if (mainState.gameArr.length === cellsState.matchedIndexesArr.length) {
                     clearInterval(timerInterval)
+                    showWinLossAlertBox('win')
                     console.log('win')
                 }
                 hideElem(overlaysArr[indexOfClicked])

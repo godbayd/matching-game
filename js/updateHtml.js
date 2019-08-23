@@ -40,9 +40,9 @@ export const timerHtml = timeArr => {
 
 
 // countdown
-export const countHtml = (secondsElapsed) => {
-    countdownBoxDiv.innerHTML = secondsElapsed
-}
+export const countHtml = (secondsElapsed) =>
+    countdownBoxDiv.innerHTML = secondsElapsed;
+
 
 
 // flash hidden numbers
@@ -51,5 +51,5 @@ export const flashHiddenNumbers = cb => {
     setTimeout(() => {
         overlaysArr.map(overlay => overlay.style.opacity = 0.3)
         cb()
-    }, 3000)
+    }, 1000)
 }

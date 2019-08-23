@@ -14,6 +14,7 @@ export const startCountdown = cb => {
             console.log('foo')
             clearInterval(coutdownInterval)
             hideElem(countdownBoxContainerDiv)
+            cb()
         }
 
     }, 1000)

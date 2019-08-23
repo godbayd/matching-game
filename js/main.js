@@ -18,7 +18,9 @@ import {
     easyRadioBtn,
     mediumRadioBtn,
     hardRadioBtn,
-    startGameBtn
+    startGameBtn,
+    //test
+    startingPageDiv
 } from './htmlElements'
 import {
     startEasyTimer,
@@ -57,7 +59,8 @@ radioBtns.map(
 
 // start game button listener
 const startGameEventSequence = () => {
-    startCountdown(flashHiddenNumbers(queueTimer))
+    startingPageDiv.style.display = 'none'
+    startCountdown(() => flashHiddenNumbers(queueTimer))
 }
 
 startGameBtn.addEventListener('click', startGameEventSequence)

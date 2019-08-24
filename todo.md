@@ -2,6 +2,8 @@
 
 ## play again
 - [ ] write list for play again stuff
+- [ ] consolidate game functions in main function to call when game restarts
+- [ ] clear all numbers before populate in populateHiddenNumberCons
 - [ ] in main.js create a click listener on playAgainBtn
 
 ## Win / loss alert box

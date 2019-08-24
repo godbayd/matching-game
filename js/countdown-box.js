@@ -1,7 +1,8 @@
-import {countdownBoxContainerDiv} from './htmlElements'
+import {countdownBoxContainerDiv, countdownBoxDiv} from './htmlElements'
 import {countHtml, showElem, hideElem} from './updateHtml'
 
 export const startCountdown = cb => {
+    countdownBoxDiv.innerHTML = 'Get ready !'
     showElem(countdownBoxContainerDiv)
     const start = performance.now()
     const coutdownInterval = setInterval(() => {

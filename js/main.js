@@ -10,7 +10,9 @@ import {handleCellClick} from './handleCellClick'
 import {mainState} from './gameState'
 import {
     populateCellsWithHiddenNumbers,
-    flashHiddenNumbers
+    flashHiddenNumbers,
+    showElem,
+    hideElem
 } from './updateHtml'
 import {
     cellsArr,
@@ -22,7 +24,8 @@ import {
     startGameBtn,
     //test
     startingPageDiv,
-    playAgainBtn
+    playAgainBtn,
+    winLossAlertBoxDiv
 } from './htmlElements'
 import {
     startEasyTimer,
@@ -38,12 +41,7 @@ import {startCountdown} from './countdown-box'
 import './test'
 
 
-// game data
-mainState.gameArr = genRandomNums(1, 10, 12)
 
-
-// populate cells with hidden numbers
-populateCellsWithHiddenNumbers()
 
 
 // cells event listener
@@ -61,8 +59,28 @@ radioBtns.map(
 
 // start game button listener
 const startGameEventSequence = () => {
-    startingPageDiv.style.display = 'none'
+    hideElem(startingPageDiv)
     startCountdown(() => flashHiddenNumbers(queueTimer))
 }
 
-startGameBtn.addEventListener('click', startGameEventSequence)
+
+const main = e => {
+    // game data
+    mainState.gameArr = genRandomNums(1, 10, 12)
+    // populate cells with hidden numbers
+    populateCellsWithHiddenNumbers()
+    startGameEventSequence();
+}
+
+
+
+startGameBtn.addEventListener('click', main)
+
+
+playAgainBtn.addEventListener('click', () => {
+    overlaysArr.map(overlay => {
+        overlay.style.opacity = 0.3
+    })
+    hideElem(winLossAlertBoxDiv)
+    showElem(startingPageDiv)
+})

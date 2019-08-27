@@ -1,5 +1,11 @@
 # To Do
 
+## Problems
+- On second round (following playBtn click):
+ - timer doesn't set the correct time
+ - hidden numbers seem to be left unhidden. Overlay needs to be hidden again in preparation for continued play
+
+
 ## play again
 - [ ] write list for play again stuff
 - [ ] consolidate game functions in main function to call when game restarts

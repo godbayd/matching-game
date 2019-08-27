@@ -1,7 +1,6 @@
 import {c} from './utils'
 import {mainState, cellsState, resetAllGameState} from './gameState'
 import {cellsArr, overlaysArr} from './htmlElements'
-import {showElem, hideElem} from './updateHtml'
 import {timerInterval} from './timer'
 import {showWinLossAlertBox} from './win-loss-alert.js'
 
@@ -38,7 +37,6 @@ export const handleCellClick = e => {
                     clearInterval(timerInterval)
                     resetAllGameState()
                     showWinLossAlertBox('win')
-                    console.log('win')
                 }
                 overlaysArr[indexOfClicked].style.opacity = 0
                 resetState()

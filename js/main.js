@@ -34,9 +34,9 @@ import {startCountdown} from './countdown-box'
 import './test'
 
 
-
 // initial render
 easyRadioBtn.checked = true
+
 
 // cells event listener
 cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
@@ -71,7 +71,6 @@ const main = e => {
     )
     startGameEventSequence();
 }
-
 
 
 startGameBtn.addEventListener('click', main)

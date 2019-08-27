@@ -1,6 +1,8 @@
 import {resetAllGameState} from './gameState'
 import {timerHtml} from './updateHtml'
 import {showWinLossAlertBox} from './win-loss-alert.js'
+
+
 export const durations = {
     easy: 2,
     medium: 1,
@@ -10,6 +12,7 @@ export const durations = {
 
 let min = null
 let sec = null
+
 const formatTime = (minutesDuration, secondsElapsed) => {
     if (min === null) min = minutesDuration < 1 ? 0 : minutesDuration - 1;
     if (sec === null) sec = minutesDuration < 1 ? (60 * minutesDuration) : 60;
@@ -19,10 +22,12 @@ const formatTime = (minutesDuration, secondsElapsed) => {
     }
     sec--
     const secOut = sec === 60 ? '00' : sec < 10 ? `0${sec}` : sec;
-    return [min, secOut].map(a => a.toString())
+    return [min, secOut].map(a => a.toString());
 }
 
+
 export let timerInterval;
+
 const timer = (startTimer, minutesDuration) => {
     min = null
     sec = null
@@ -32,17 +37,14 @@ const timer = (startTimer, minutesDuration) => {
         timerInterval = setInterval(() => {
             const delta = performance.now() - start,
                   secondsElapsed = (minutesDuration * 60) - Math.floor(delta / 1000);
-                  console.log(secondsElapsed)
 
             if (secondsElapsed > 0) {
                 // timer html here
                 timerHtml(formatTime(minutesDuration, secondsElapsed))
-                // console.log(formatTime(minutesDuration, secondsElapsed))
             }
 
             // loss condition
             else {
-                console.log('out of time')
                 clearInterval(timerInterval)
                 resetAllGameState()
                 showWinLossAlertBox('lose')
@@ -52,11 +54,8 @@ const timer = (startTimer, minutesDuration) => {
     }
 }
 
+
 export const startEasyTimer = () => timer(true, 2, durations.easy)
 export const startMediumTimer = () => timer(true, durations.medium)
 export const startHardTimer = () => timer(true, 0.5, durations.hard)
-
 export const stopTimer = () => timer(false)
-
-// test
-// startEasyTimer()

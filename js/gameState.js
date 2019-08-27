@@ -3,7 +3,6 @@ export const mainState = {
     difficulty: 1,
     resetState: function(){
         this.gameArr = null
-        // this.difficulty = null
     }
 }
 

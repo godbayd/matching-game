@@ -1,7 +1,8 @@
 # To Do
 
 ## Problems
-- timer does not reset correctly on continuing rounds(after playAgainBtn is clicked)
+- on starting page, on continuing round:
+    - if difficulty isnt clicked (if left from previous round). the timer doesnt roll out the correct time. This is because the correct timer is triggered on radio btn click
 
 ## play again
 - [ ] fix reset timer

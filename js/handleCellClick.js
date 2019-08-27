@@ -1,4 +1,3 @@
-import {c} from './utils'
 import {mainState, cellsState, resetAllGameState} from './gameState'
 import {cellsArr, overlaysArr} from './htmlElements'
 import {timerInterval} from './timer'

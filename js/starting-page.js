@@ -1,19 +1,23 @@
 import {mainState} from './gameState'
 import {
-    startingPageDiv,
-    easyRadioBtn,
-    mediumRadioBtn,
-    hardRadioBtn
+    startingPageDiv
 } from './htmlElements'
 import {
     startEasyTimer,
     startMediumTimer,
     startHardTimer
 } from './timer'
-import {showElem, hideElem, intialTimeHtml} from './updateHtml'
+import {hideElem, intialTimeHtml} from './updateHtml'
+
 
 const exitPage = () => hideElem(startingPageDiv)
 
+
+/*
+    radioBtn callback:
+        set mainState.difficulty based on
+        respective radioBtn click
+*/
 export const handleDifficultyRadioButtonsClicks = e => {
     switch (e.currentTarget.value) {
         case 'easy':
@@ -31,6 +35,10 @@ export const handleDifficultyRadioButtonsClicks = e => {
     intialTimeHtml(e.currentTarget.value)
 }
 
+
+/*
+    start timer based on set difficulty
+*/
 export const queueTimer = e => {
     if (mainState.difficulty) {
         switch (mainState.difficulty) {

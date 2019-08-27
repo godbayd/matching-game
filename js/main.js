@@ -18,22 +18,14 @@ import {
 import {
     cellsArr,
     overlaysArr,
-    hiddenNumberArr,
     easyRadioBtn,
     mediumRadioBtn,
     hardRadioBtn,
     startGameBtn,
-    //test
     startingPageDiv,
     playAgainBtn,
     winLossAlertBoxDiv
 } from './htmlElements'
-import {
-    startEasyTimer,
-    startMediumTimer,
-    startHardTimer,
-    stopTimer
-} from './timer'
 import {
     handleDifficultyRadioButtonsClicks,
     queueTimer
@@ -44,7 +36,7 @@ import './test'
 
 
 // initial render
-easyRadioBtn.checked  = true
+easyRadioBtn.checked = true
 
 // cells event listener
 cellsArr.map(cell => cell.addEventListener('click', handleCellClick))

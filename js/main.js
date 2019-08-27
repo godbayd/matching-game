@@ -12,7 +12,8 @@ import {
     populateCellsWithHiddenNumbers,
     flashHiddenNumbers,
     showElem,
-    hideElem
+    hideElem,
+    intialTimeHtml
 } from './updateHtml'
 import {
     cellsArr,
@@ -69,6 +70,12 @@ const main = e => {
     mainState.gameArr = genRandomNums(1, 10, 12)
     // populate cells with hidden numbers
     populateCellsWithHiddenNumbers()
+    // initial time html before timer starts moving
+    intialTimeHtml(
+        mainState.difficulty === 1 ? 'easy' :
+        mainState.difficulty === 2 ? 'medium' :
+        mainState.difficulty === 3 ? 'hard' : false
+    )
     startGameEventSequence();
 }
 

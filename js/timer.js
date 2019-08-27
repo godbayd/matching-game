@@ -11,8 +11,6 @@ export const durations = {
 let min = null
 let sec = null
 const formatTime = (minutesDuration, secondsElapsed) => {
-    console.log(min)
-    console.log(sec)
     if (min === null) min = minutesDuration < 1 ? 0 : minutesDuration - 1;
     if (sec === null) sec = minutesDuration < 1 ? (60 * minutesDuration) : 60;
     if (sec === 0) {

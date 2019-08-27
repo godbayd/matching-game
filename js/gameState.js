@@ -1,6 +1,6 @@
 export const mainState = {
     gameArr: null,
-    difficulty: null,
+    difficulty: 1,
     resetState: function(){
         this.gameArr = null
         // this.difficulty = null

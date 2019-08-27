@@ -43,7 +43,8 @@ import './test'
 
 
 
-
+// initial render
+easyRadioBtn.checked  = true
 
 // cells event listener
 cellsArr.map(cell => cell.addEventListener('click', handleCellClick))

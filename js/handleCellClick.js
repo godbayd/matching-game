@@ -45,8 +45,8 @@ export const handleCellClick = e => {
             }
             // no match case
             else {
-                showElem(overlaysArr[indexOfClicked])
-                showElem(overlaysArr[cellsState.indexOfFirstClicked])
+                overlaysArr[indexOfClicked].style.opacity = 0.3
+                overlaysArr[cellsState.indexOfFirstClicked].style.opacity = 0.3
                 resetState()
             }
         }

@@ -3,7 +3,7 @@
 ## Problems
 - On second round (following playBtn click):
  - timer doesn't set the correct time
- - hidden numbers seem to be left unhidden. Overlay needs to be hidden again in preparation for continued play
+ - hidden numbers seem to be left unhidden. Overlay needs to be hidden again in preparation for continued play. This is because the display of overlays are being set to none somewhere. 
 
 
 ## play again

@@ -12,7 +12,7 @@ export const startCountdown = cb => {
         if (secondsElapsed > 0) countHtml(secondsElapsed);
 
         else {
-            console.log('foo')
+            console.log('countdown finished')
             clearInterval(coutdownInterval)
             hideElem(countdownBoxContainerDiv)
             cb()

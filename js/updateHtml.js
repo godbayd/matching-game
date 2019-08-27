@@ -50,6 +50,7 @@ export const flashHiddenNumbers = cb => {
     overlaysArr.map(overlay => overlay.style.opacity = 0)
     setTimeout(() => {
         overlaysArr.map(overlay => overlay.style.opacity = 0.3)
+        console.log('replace overlays')
         cb()
     }, 1000)
 }

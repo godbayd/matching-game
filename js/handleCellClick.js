@@ -25,7 +25,7 @@ export const handleCellClick = e => {
         if (!cellsState.firstClickedHiddenNumber) {
             cellsState.firstClickedHiddenNumber = hiddenNumberOfClicked
             cellsState.indexOfFirstClicked = indexOfClicked
-            hideElem(overlaysArr[indexOfClicked])
+            overlaysArr[indexOfClicked].style.opacity = 0
         }
 
         else {
@@ -40,7 +40,7 @@ export const handleCellClick = e => {
                     showWinLossAlertBox('win')
                     console.log('win')
                 }
-                hideElem(overlaysArr[indexOfClicked])
+                overlaysArr[indexOfClicked].style.opacity = 0
                 resetState()
             }
             // no match case

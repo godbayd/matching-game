@@ -1,3 +1,4 @@
+import {resetAllGameState} from './gameState'
 import {timerHtml} from './updateHtml'
 import {showWinLossAlertBox} from './win-loss-alert.js'
 export const durations = {
@@ -41,6 +42,7 @@ const timer = (startTimer, minutesDuration) => {
             else {
                 console.log('out of time')
                 clearInterval(timerInterval)
+                resetAllGameState()
                 showWinLossAlertBox('lose')
             }
 

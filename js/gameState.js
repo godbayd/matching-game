@@ -1,6 +1,10 @@
 export const mainState = {
     gameArr: null,
-    difficulty: null
+    difficulty: null,
+    resetState: function(){
+        this.gameArr = null
+        this.difficulty = null
+    }
 }
 
 export const cellsState = {
@@ -8,8 +12,13 @@ export const cellsState = {
     firstClickedHiddenNumber: null,
     indexOfFirstClicked: null,
     resetState: function() {
-        matchedIndexesArr = []
-        firstClickedHiddenNumber = null
-        indexOfFirstClicked = null
+        this.matchedIndexesArr = []
+        this.firstClickedHiddenNumber = null
+        this.indexOfFirstClicked = null
     }
+}
+
+export const resetAllGameState = () => {
+    mainState.resetState()
+    cellsState.resetState()
 }

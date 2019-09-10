@@ -1,0 +1,45 @@
+#starting-page {
+    @extend %cxy;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %hun;
+    background-color: black;
+    .difficulty-btn {
+        position: relative;
+        @extend %cxy;
+        width: 70%;
+        height: 100px;
+        background-color: #fff;
+        color: black;
+        margin-bottom: 20px;
+        &:last-child { margin: 0; }
+        font-size: $difficulty-btn-size;
+        overflow: hidden;
+        .start-option-container {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 40%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            transform: translateX(100%);
+            #easy-btn, #medium-btn,
+            #hard-btn, .keep-choosing-btn {
+                @extend %cxy;
+                width: 100%;
+                height: 50%;
+                color: white;
+                font-size: $start-back-f-sizef;
+            }
+            #easy-btn, #medium-btn, #hard-btn {
+                background-color: blue;
+            }
+            .keep-choosing-btn {
+                background-color: gray;
+            }
+        }
+    }
+}

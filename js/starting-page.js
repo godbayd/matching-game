@@ -9,7 +9,6 @@ import {
 } from './timer'
 import {hideElem, intialTimeHtml} from './updateHtml'
 
-
 const exitPage = () => hideElem(startingPageDiv)
 
 

@@ -1,11 +1,27 @@
-.con
-    #game
-        include pug_includes/timer-bar.pug
-        .board
-            - for(var i = 0; i < 12; i++)
-                .cell
-                    .hidden-number-container
-                    .overlay
-        include pug_includes/starting-page.pug
-        include pug_includes/countdown-box.pug
-        include pug_includes/win-loss-alert-box.pug
+doctype html
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+        #app
+            #game-board
+                #top-bar
+                    .back-btn &lt;
+                    .time-display 2:00
+                - for (var i = 0; i < 6; i++)
+                    .row
+                        - for (var j = 0; j < 2; j++)
+                            .cell
+            #starting-page
+                .difficulty-btn Easy
+                    .start-option-container
+                        #easy-btn Start
+                        .keep-choosing-btn x
+                .difficulty-btn Medium
+                    .start-option-container
+                        #medium-btn Start
+                        .keep-choosing-btn x
+                .difficulty-btn Hard
+                    .start-option-container
+                        #hard-btn Start
+                        .keep-choosing-btn x

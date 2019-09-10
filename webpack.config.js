@@ -15,6 +15,7 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'dist'),
         watchContentBase: true,
         hot: true,
+        host: '192.168.0.14',
         port: 9001,
         clientLogLevel: 'silent'
     },

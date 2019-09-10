@@ -29,6 +29,7 @@ import {
 import {startCountdown} from './countdown-box'
 import './test'
 
+document.body.style.height = window.innerHeight + 'px'
 
 // initial render
 easyRadioBtn.checked = true

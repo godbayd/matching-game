@@ -7,9 +7,9 @@ export const overlaysArr = selectAll('#game .board .cell .overlay')
 
 // starting page
 export const startingPageDiv = select('#starting-page')
-export const easyRadioBtn = select('#easy-radio-btn')
-export const mediumRadioBtn = select('#medium-radio-btn')
-export const hardRadioBtn = select('#hard-radio-btn')
+export const easyRadioBtn = select('#easy-opt-btn')
+export const mediumRadioBtn = select('#medium-opt-btn')
+export const hardRadioBtn = select('#hard-opt-btn')
 export const startGameBtn = select('#start-game-btn')
 
 // timer bar

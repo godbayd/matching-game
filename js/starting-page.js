@@ -18,14 +18,14 @@ const exitPage = () => hideElem(startingPageDiv)
         respective radioBtn click
 */
 export const handleDifficultyRadioButtonsClicks = e => {
-    switch (e.currentTarget.value) {
-        case 'easy':
+    switch (e.currentTarget.id) {
+        case 'easy-opt-btn':
             mainState.difficulty = 1;
             break;
-        case 'medium':
+        case 'medium-opt-btn':
             mainState.difficulty = 2;
             break;
-        case 'hard':
+        case 'hard-opt-btn':
             mainState.difficulty = 3;
             break;
         default:

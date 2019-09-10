@@ -1,5 +1,6 @@
 import {TweenMax} from "gsap/TweenMax";
 import {select, selectAll} from './utils'
+import {mainState} from './gameState'
 
 const startingPageDiv = select('#starting-page')
 const startOptCon = select('.start-option-container')
@@ -21,6 +22,8 @@ const handleStartBtnClick = e => {
 const handleBtnClick = e => {
 
     e.stopPropagation()
+
+    console.log(mainState)
 
     const indexOfCurrent = difficultyBtnsArr.indexOf(e.currentTarget)
     const currentStartOptCon = startOptConsArr[indexOfCurrent]

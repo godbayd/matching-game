@@ -42,13 +42,6 @@ difficultyBtnsArr.map(
 )
 
 
-// start game button listener
-const startGameEventSequence = () => {
-    hideElem(startingPageDiv)
-    startCountdown(() => flashHiddenNumbers(queueTimer))
-}
-
-
 const main = e => {
     e.stopPropagation()
     // game data
@@ -63,8 +56,7 @@ const main = e => {
                  md === 2 ? 'medium' :
                  md === 3 ? 'hard' : false
     intialTimeHtml(diff)
-
-    startGameEventSequence();
+    queueTimer()
 }
 
 

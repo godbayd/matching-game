@@ -36,18 +36,3 @@ export const timerHtml = timeArr => {
     minutesDiv.innerHTML = minutes
     secondsDiv.innerHTML = seconds
 }
-
-
-// countdown
-export const countHtml = (secondsElapsed) =>
-    countdownBoxDiv.innerHTML = secondsElapsed;
-
-
-// flash hidden numbers
-export const flashHiddenNumbers = cb => {
-    overlaysArr.map(overlay => overlay.style.opacity = 0)
-    setTimeout(() => {
-        overlaysArr.map(overlay => overlay.style.opacity = 0.3)
-        cb()
-    }, 1000)
-}

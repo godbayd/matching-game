@@ -20,7 +20,8 @@ import {
     startGameBtn,
     startingPageDiv,
     playAgainBtn,
-    winLossAlertBoxDiv
+    winLossAlertBoxDiv,
+    startBtnsArr
 } from './htmlElements'
 import {
     handleDifficultyRadioButtonsClicks,
@@ -70,7 +71,7 @@ const main = e => {
 }
 
 
-startGameBtn.addEventListener('click', main)
+startBtnsArr.map(startBtn => startBtn.addEventListener('click', main))
 
 
 playAgainBtn.addEventListener('click', () => {

@@ -25,3 +25,14 @@ export const countdownBoxDiv = select('#countdown-box-container .box')
 export const winLossAlertBoxDiv = select('#win-loss-alert-box')
 export const winLossAlertDiv = select('#win-loss-alert-box .alert')
 export const playAgainBtn = select('#play-again-btn')
+
+
+
+///////////////////////////////////////
+// from test
+const startOptCon = select('.start-option-container')
+const startOptConsArr = selectAll('.start-option-container')
+const difficultyBtnsArr = selectAll('.difficulty-btn')
+const startBtnsArr = [
+    select('#easy-btn'), select('#medium-btn'), select('#hard-btn')
+]

@@ -1,6 +1,5 @@
 import {TweenMax} from "gsap/TweenMax";
 import {select, selectAll} from './utils'
-import {mainState} from './gameState'
 
 const startingPageDiv = select('#starting-page')
 const startOptCon = select('.start-option-container')
@@ -14,7 +13,6 @@ const keepChoosingBtnsArr = selectAll('.keep-choosing-btn')
 
 const handleStartBtnClick = e => {
     e.stopPropagation()
-    console.log(e.currentTarget)
     e.currentTarget.removeEventListener('click', handleStartBtnClick)
 }
 
@@ -22,8 +20,6 @@ const handleStartBtnClick = e => {
 const handleBtnClick = e => {
 
     e.stopPropagation()
-
-    console.log(mainState)
 
     const indexOfCurrent = difficultyBtnsArr.indexOf(e.currentTarget)
     const currentStartOptCon = startOptConsArr[indexOfCurrent]

@@ -24,7 +24,7 @@ import {
     handleDifficultyRadioButtonsClicks,
     queueTimer
 } from './starting-page'
-import './starting-page-ui'
+import './ui/starting-page-ui'
 import './test'
 
 document.body.style.height = window.innerHeight + 'px'

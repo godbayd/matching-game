@@ -1,11 +1,11 @@
 import {TweenMax} from "gsap/TweenMax";
-import {select, selectAll} from './utils'
+import {select, selectAll} from '../utils'
 import {
     startOptCon,
     startOptConsArr,
     difficultyBtnsArr,
     startBtnsArr
-} from './htmlElements'
+} from '../htmlElements'
 
 
 const keepChoosingBtnsArr = selectAll('.keep-choosing-btn')

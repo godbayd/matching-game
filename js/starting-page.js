@@ -31,7 +31,11 @@ export const handleDifficultyRadioButtonsClicks = e => {
         default:
             return false;
     }
-    intialTimeHtml(e.currentTarget.value)
+    // const md = mainState.difficulty
+    // const diff = md === 1 ? 'easy' :
+    //              md === 2 ? 'medium' :
+    //              md === 3 ? 'hard' : false
+    // intialTimeHtml(diff)
 }
 
 

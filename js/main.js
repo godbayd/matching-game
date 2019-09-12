@@ -14,10 +14,7 @@ import {
 import {
     cellsArr,
     overlaysArr,
-    easyRadioBtn,
-    mediumRadioBtn,
-    hardRadioBtn,
-    startGameBtn,
+    difficultyBtnsArr,
     startingPageDiv,
     playAgainBtn,
     winLossAlertBoxDiv,
@@ -27,23 +24,19 @@ import {
     handleDifficultyRadioButtonsClicks,
     queueTimer
 } from './starting-page'
-import {startCountdown} from './countdown-box'
+import './starting-page-ui'
 import './test'
 
 document.body.style.height = window.innerHeight + 'px'
 
-// initial render
-easyRadioBtn.checked = true
-
-
 // cells event listener
-cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
+// may need to do when cells exist
+// cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
 
 
-// radio buttons event listener
-const radioBtns = [easyRadioBtn, mediumRadioBtn, hardRadioBtn]
-radioBtns.map(
-    radioBtn => radioBtn.addEventListener(
+// difficulty buttons event listener
+difficultyBtnsArr.map(
+    diffBtn => diffBtn.addEventListener(
         'click', handleDifficultyRadioButtonsClicks
     )
 )
@@ -57,16 +50,20 @@ const startGameEventSequence = () => {
 
 
 const main = e => {
+    e.stopPropagation()
     // game data
     mainState.gameArr = genRandomNums(1, 10, 12)
+
     // populate cells with hidden numbers
     populateCellsWithHiddenNumbers()
+
     // initial time html before timer starts moving
-    intialTimeHtml(
-        mainState.difficulty === 1 ? 'easy' :
-        mainState.difficulty === 2 ? 'medium' :
-        mainState.difficulty === 3 ? 'hard' : false
-    )
+    const md = mainState.difficulty
+    const diff = md === 1 ? 'easy' :
+                 md === 2 ? 'medium' :
+                 md === 3 ? 'hard' : false
+    intialTimeHtml(diff)
+
     startGameEventSequence();
 }
 
@@ -74,10 +71,10 @@ const main = e => {
 startBtnsArr.map(startBtn => startBtn.addEventListener('click', main))
 
 
-playAgainBtn.addEventListener('click', () => {
-    overlaysArr.map(overlay => {
-        overlay.style.opacity = 0.3
-    })
-    hideElem(winLossAlertBoxDiv)
-    showElem(startingPageDiv)
-})
+// playAgainBtn.addEventListener('click', () => {
+//     overlaysArr.map(overlay => {
+//         overlay.style.opacity = 0.3
+//     })
+//     hideElem(winLossAlertBoxDiv)
+//     showElem(startingPageDiv)
+// })

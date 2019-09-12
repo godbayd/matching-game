@@ -7,10 +7,14 @@ export const overlaysArr = selectAll('#game .board .cell .overlay')
 
 // starting page
 export const startingPageDiv = select('#starting-page')
-export const easyRadioBtn = select('#easy-opt-btn')
-export const mediumRadioBtn = select('#medium-opt-btn')
-export const hardRadioBtn = select('#hard-opt-btn')
-export const startGameBtn = select('#start-game-btn')
+export const easyOptionBtn = select('#easy-opt-btn')
+export const mediumOptionBtn = select('#medium-opt-btn')
+export const hardOptionBtn = select('#hard-opt-btn')
+// ui
+export const startOptCon = select('.start-option-container')
+export const startOptConsArr = selectAll('.start-option-container')
+export const difficultyBtnsArr = selectAll('.difficulty-btn')
+export const startBtnsArr = selectAll('.start-game-btn')
 
 // timer bar
 export const timerBarDiv = select('#timer-bar')
@@ -25,14 +29,3 @@ export const countdownBoxDiv = select('#countdown-box-container .box')
 export const winLossAlertBoxDiv = select('#win-loss-alert-box')
 export const winLossAlertDiv = select('#win-loss-alert-box .alert')
 export const playAgainBtn = select('#play-again-btn')
-
-
-
-///////////////////////////////////////
-// from test
-const startOptCon = select('.start-option-container')
-const startOptConsArr = selectAll('.start-option-container')
-const difficultyBtnsArr = selectAll('.difficulty-btn')
-const startBtnsArr = [
-    select('#easy-btn'), select('#medium-btn'), select('#hard-btn')
-]

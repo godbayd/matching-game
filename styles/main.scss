@@ -45,6 +45,9 @@ html, body {
     justify-content: space-between;
     width: 100%;
     margin-bottom: $gap;
+    .time-display {
+        display: flex;
+    }
 }
 
 @import './game-board';

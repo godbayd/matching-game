@@ -7,7 +7,10 @@ html
             #game-board
                 #top-bar
                     .back-btn &lt;
-                    .time-display 2:00
+                    .time-display 
+                        .minutes 2 
+                        | &colon;
+                        .seconds 00
                 - for (var i = 0; i < 6; i++)
                     .row
                         - for (var j = 0; j < 2; j++)

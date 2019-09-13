@@ -10,11 +10,13 @@ const showHidden = e =>
 const hideUnmatched = (firstClicked, secondClicked) => {
     TweenMax.to(secondClicked, 0.3, {rotationX: 180})
     if (secondClicked) {
-        [firstClicked, secondClicked].map(e => TweenMax.to(e, 0.3, {rotationX: 0}).delay(0.6))
+        [firstClicked, secondClicked].map(e => {
+            TweenMax.to(e, 0.3, {rotationX: 0}).delay(0.6)
+        })
     }
 }
 
-const resetState = () => {
+const resetClickedState = () => {
     cellsState.firstClickedHiddenNumber = null
     cellsState.indexOfFirstClicked = null
 }
@@ -49,7 +51,7 @@ export const handleCellClick = e => {
                     showWinLossAlertBox('win')
                 }
                 showHidden(clickedInnerCell)
-                resetState()
+                resetClickedState()
             }
             // no match case
             else {
@@ -57,7 +59,7 @@ export const handleCellClick = e => {
                     innerCellsArr[cellsState.indexOfFirstClicked],
                     clickedInnerCell
                 )
-                resetState()
+                resetClickedState()
             }
         }
 

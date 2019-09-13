@@ -7,8 +7,12 @@ import {showWinLossAlertBox} from './win-loss-alert.js'
 const showHidden = e =>
     TweenMax.to(e, 0.3, {rotationX: 180});
 
-const hideHidden = e =>
-    TweenMax.to(e, 0.3, {rotationX: 0});
+const hideUnmatched = (firstClicked, secondClicked) => {
+    TweenMax.to(secondClicked, 0.3, {rotationX: 180})
+    if (secondClicked) {
+        [firstClicked, secondClicked].map(e => TweenMax.to(e, 0.3, {rotationX: 0}).delay(0.6))
+    }
+}
 
 const resetState = () => {
     cellsState.firstClickedHiddenNumber = null
@@ -49,8 +53,10 @@ export const handleCellClick = e => {
             }
             // no match case
             else {
-                hideHidden(clickedInnerCell)
-                hideHidden(innerCellsArr[cellsState.indexOfFirstClicked])
+                hideUnmatched(
+                    innerCellsArr[cellsState.indexOfFirstClicked],
+                    clickedInnerCell
+                )
                 resetState()
             }
         }

@@ -14,7 +14,30 @@
         .cell {
             &:nth-child(odd) { margin-right: $gap; }
             @extend %hun;
-            background-color: #fff;
+            perspective: calc(100vh / 6);
+            // &:hover .inner-cell {
+            //     transform: rotateX(180deg);
+            // }
+            // overflow: hidden;
+            .inner-cell {
+                position: relative;
+                @extend %hun;
+                transition: transform ease 300ms;
+                transform-style: preserve-3d;
+                .front, .back {
+                    position: absolute;
+                    @extend %hun;
+                    backface-visibility: hidden;
+                }
+                .front {
+                    background-color: white;
+                }
+                .back {
+                    @extend %cxy;
+                    background-color: gray;
+                    transform: rotateX(180deg);
+                }
+            }
         }
     }
 }

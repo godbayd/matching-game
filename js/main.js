@@ -43,7 +43,9 @@ difficultyBtnsArr.map(
 
 
 const main = e => {
+
     e.stopPropagation()
+
     // game data
     mainState.gameArr = genRandomNums(1, 10, 12)
 
@@ -56,7 +58,11 @@ const main = e => {
                  md === 2 ? 'medium' :
                  md === 3 ? 'hard' : false
     intialTimeHtml(diff)
-    queueTimer()
+    startingPageDiv.style.display = 'none'
+    // flash hidden here
+
+    // queueTimer()
+
 }
 
 

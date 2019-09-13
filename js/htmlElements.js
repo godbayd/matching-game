@@ -16,7 +16,7 @@ export const difficultyBtnsArr = selectAll('.difficulty-btn')
 export const startBtnsArr = selectAll('.start-game-btn')
 
 // timer bar
-export const timerBarDiv = select('#timer-bar')
+export const timerBarDiv = select('#top-bar')
 export const minutesDiv = select('#top-bar .minutes')
 export const secondsDiv = select('#top-bar .seconds')
 

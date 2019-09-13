@@ -1,8 +1,14 @@
 import {mainState, cellsState, resetAllGameState} from './gameState'
-import {cellsArr} from './htmlElements'
+import {cellsArr, innerCellsArr} from './htmlElements'
 import {timerInterval} from './timer'
 import {showWinLossAlertBox} from './win-loss-alert.js'
 
+
+const showHidden = e =>
+    TweenMax.to(e, 0.3, {rotationX: 180});
+
+const hideHidden = e =>
+    TweenMax.to(e, 0.3, {rotationX: 0});
 
 const resetState = () => {
     cellsState.firstClickedHiddenNumber = null
@@ -15,7 +21,8 @@ export const handleCellClick = e => {
           hiddenNumberOfClicked = mainState.gameArr[indexOfClicked],
           alreadyClicked = cellsState.indexOfFirstClicked === indexOfClicked,
           inMatchedIndexesArr =
-            cellsState.matchedIndexesArr.indexOf(indexOfClicked) !== -1;
+            cellsState.matchedIndexesArr.indexOf(indexOfClicked) !== -1,
+          clickedInnerCell = innerCellsArr[indexOfClicked]
 
     if (!alreadyClicked && !inMatchedIndexesArr) {
 
@@ -23,7 +30,7 @@ export const handleCellClick = e => {
         if (!cellsState.firstClickedHiddenNumber) {
             cellsState.firstClickedHiddenNumber = hiddenNumberOfClicked
             cellsState.indexOfFirstClicked = indexOfClicked
-            overlaysArr[indexOfClicked].style.opacity = 0
+            showHidden(clickedInnerCell)
         }
 
         else {
@@ -37,13 +44,13 @@ export const handleCellClick = e => {
                     resetAllGameState()
                     showWinLossAlertBox('win')
                 }
-                overlaysArr[indexOfClicked].style.opacity = 0
+                showHidden(clickedInnerCell)
                 resetState()
             }
             // no match case
             else {
-                overlaysArr[indexOfClicked].style.opacity = 0.3
-                overlaysArr[cellsState.indexOfFirstClicked].style.opacity = 0.3
+                hideHidden(clickedInnerCell)
+                hideHidden(innerCellsArr[cellsState.indexOfFirstClicked])
                 resetState()
             }
         }

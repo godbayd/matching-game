@@ -5,6 +5,8 @@ export const hiddenNumberArr   = selectAll('#game-board .cell .back')
 export const cellsArr    = selectAll('#game-board .cell')
 export const innerCellsArr    = selectAll('#game-board .inner-cell')
 
+// game-board
+export const gameBoardPageDiv = select('#game-board')
 
 // starting page
 export const startingPageDiv = select('#starting-page')
@@ -22,7 +24,7 @@ export const timerBarDiv = select('#top-bar')
 export const minutesDiv = select('#top-bar .minutes')
 export const secondsDiv = select('#top-bar .seconds')
 
-// coutdown
+// countdown
 export const countdownBoxContainerDiv = select('#countdown-box-container')
 export const countdownBoxDiv = select('#countdown-box-container .box')
 

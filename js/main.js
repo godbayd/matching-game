@@ -20,19 +20,19 @@ import {
     winLossAlertBoxDiv,
     startBtnsArr
 } from './htmlElements'
-import {flashHidden} from './ui/flash-hidden'
 import {
     handleDifficultyRadioButtonsClicks,
     queueTimer
 } from './starting-page'
 import './ui/starting-page-ui'
+import {startTransition} from './ui/start-sequence'
 import './test'
 
 document.body.style.height = window.innerHeight + 'px'
 
 // cells event listener
 // may need to do when cells exist
-// cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
+cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
 
 
 // difficulty buttons event listener
@@ -60,13 +60,7 @@ const main = e => {
                  md === 3 ? 'hard' : false
     intialTimeHtml(diff)
 
-    // temp (will be transition)
-    startingPageDiv.style.display = 'none'
-
-    // flash hidden here
-    flashHidden()
-
-    // queueTimer()
+    startTransition()
 
 }
 

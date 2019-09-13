@@ -1,6 +1,6 @@
 import {resetAllGameState} from './gameState'
 import {timerHtml} from './updateHtml'
-import {showWinLossAlertBox} from './win-loss-alert.js'
+import {appendAlertMessage} from './win-loss-alert.js'
 
 
 export const durations = {
@@ -47,7 +47,7 @@ const timer = (startTimer, minutesDuration) => {
             else {
                 clearInterval(timerInterval)
                 resetAllGameState()
-                showWinLossAlertBox('lose')
+                appendAlertMessage('lose')
             }
 
         }, 1000)

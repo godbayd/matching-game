@@ -1,7 +1,7 @@
 import {mainState, cellsState, resetAllGameState} from './gameState'
 import {cellsArr, innerCellsArr} from './htmlElements'
 import {timerInterval} from './timer'
-import {showWinLossAlertBox} from './win-loss-alert.js'
+import {appendAlertMessage} from './win-loss-alert.js'
 
 
 const exposeHiddenNumber = e =>
@@ -48,7 +48,8 @@ export const handleCellClick = e => {
                 if (mainState.gameArr.length === cellsState.matchedIndexesArr.length) {
                     clearInterval(timerInterval)
                     resetAllGameState()
-                    showWinLossAlertBox('win')
+                    appendAlertMessage('win')
+                    // transition here
                 }
                 exposeHiddenNumber(clickedInnerCell)
                 resetClickedState()

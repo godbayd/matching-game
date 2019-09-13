@@ -13,7 +13,6 @@ const alertMessage = decision => {
 }
 
 
-export const showWinLossAlertBox = decision => {
+export const appendAlertMessage = decision => {
     winLossAlertDiv.innerHTML = alertMessage(decision)
-    showElem(winLossAlertBoxDiv)
 }

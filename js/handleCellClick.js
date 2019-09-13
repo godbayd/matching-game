@@ -4,7 +4,7 @@ import {timerInterval} from './timer'
 import {showWinLossAlertBox} from './win-loss-alert.js'
 
 
-const showHidden = e =>
+const exposeHiddenNumber = e =>
     TweenMax.to(e, 0.3, {rotationX: 180});
 
 const hideUnmatched = (firstClicked, secondClicked) => {
@@ -36,7 +36,7 @@ export const handleCellClick = e => {
         if (!cellsState.firstClickedHiddenNumber) {
             cellsState.firstClickedHiddenNumber = hiddenNumberOfClicked
             cellsState.indexOfFirstClicked = indexOfClicked
-            showHidden(clickedInnerCell)
+            exposeHiddenNumber(clickedInnerCell)
         }
 
         else {
@@ -50,7 +50,7 @@ export const handleCellClick = e => {
                     resetAllGameState()
                     showWinLossAlertBox('win')
                 }
-                showHidden(clickedInnerCell)
+                exposeHiddenNumber(clickedInnerCell)
                 resetClickedState()
             }
             // no match case

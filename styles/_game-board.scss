@@ -22,7 +22,7 @@
             .inner-cell {
                 position: relative;
                 @extend %hun;
-                transition: transform ease 300ms;
+                // transition: transform ease 300ms;
                 transform-style: preserve-3d;
                 .front, .back {
                     position: absolute;

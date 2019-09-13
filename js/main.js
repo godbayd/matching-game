@@ -20,6 +20,7 @@ import {
     winLossAlertBoxDiv,
     startBtnsArr
 } from './htmlElements'
+import {flashHidden} from './ui/flash-hidden'
 import {
     handleDifficultyRadioButtonsClicks,
     queueTimer
@@ -58,8 +59,12 @@ const main = e => {
                  md === 2 ? 'medium' :
                  md === 3 ? 'hard' : false
     intialTimeHtml(diff)
+
+    // temp (will be transition)
     startingPageDiv.style.display = 'none'
+
     // flash hidden here
+    flashHidden()
 
     // queueTimer()
 

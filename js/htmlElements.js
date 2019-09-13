@@ -3,6 +3,8 @@ import {select, selectAll} from './utils'
 // html element arrays
 export const hiddenNumberArr   = selectAll('#game-board .cell .back')
 export const cellsArr    = selectAll('#game-board .cell')
+export const innerCellsArr    = selectAll('#game-board .inner-cell')
+
 
 // starting page
 export const startingPageDiv = select('#starting-page')

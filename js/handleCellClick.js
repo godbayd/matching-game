@@ -1,5 +1,5 @@
 import {mainState, cellsState, resetAllGameState} from './gameState'
-import {cellsArr, overlaysArr} from './htmlElements'
+import {cellsArr} from './htmlElements'
 import {timerInterval} from './timer'
 import {showWinLossAlertBox} from './win-loss-alert.js'
 

@@ -1,3 +1,6 @@
+/*
+    PLAY AGAIN FUNCTIONALITY NEEDS WORK
+*/
 import '../index.pug'
 import '../styles/main.scss'
 import {select, selectAll, c} from './utils'
@@ -9,7 +12,8 @@ import {
     flashHiddenNumbers,
     showElem,
     hideElem,
-    intialTimeHtml
+    intialTimeHtml,
+    innerCellsArr
 } from './updateHtml'
 import {
     cellsArr,
@@ -67,11 +71,14 @@ const main = e => {
 
 startBtnsArr.map(startBtn => startBtn.addEventListener('click', main))
 
-
-// playAgainBtn.addEventListener('click', () => {
-//     innerCellsArr.map(innerCell => {
-//         innerCell.style.opacity = 0.3
-//     })
-//     hideElem(winLossAlertBoxDiv)
-//     showElem(startingPageDiv)
-// })
+/*
+    NEEDS WORK
+*/
+playAgainBtn.addEventListener('click', () => {
+    console.log('clicked')
+    innerCellsArr.map(innerCell => {
+        innerCell.style.transform = 'rotateX(0deg)'
+    })
+    hideElem(winLossAlertBoxDiv)
+    showElem(startingPageDiv)
+})

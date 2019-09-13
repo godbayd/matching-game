@@ -1,9 +1,9 @@
 import {select, selectAll} from './utils'
 
 // html element arrays
-export const hiddenNumberArr   = selectAll('#game-board .cell .back')
-export const cellsArr    = selectAll('#game-board .cell')
-export const innerCellsArr    = selectAll('#game-board .inner-cell')
+export const hiddenNumberArr  = selectAll('#game-board .cell .back')
+export const cellsArr = selectAll('#game-board .cell')
+export const innerCellsArr = selectAll('#game-board .inner-cell')
 
 // game-board
 export const gameBoardPageDiv = select('#game-board')
@@ -24,11 +24,7 @@ export const timerBarDiv = select('#top-bar')
 export const minutesDiv = select('#top-bar .minutes')
 export const secondsDiv = select('#top-bar .seconds')
 
-// countdown
-export const countdownBoxContainerDiv = select('#countdown-box-container')
-export const countdownBoxDiv = select('#countdown-box-container .box')
-
 // win loss
-export const winLossAlertBoxDiv = select('#win-loss-alert-box')
-export const winLossAlertDiv = select('#win-loss-alert-box .alert')
+export const winLossAlertBoxDiv = select('#win-loss-box')
+export const winLossAlertDiv = select('#win-loss-box .alert')
 export const playAgainBtn = select('#play-again-btn')

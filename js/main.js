@@ -69,8 +69,8 @@ startBtnsArr.map(startBtn => startBtn.addEventListener('click', main))
 
 
 // playAgainBtn.addEventListener('click', () => {
-//     overlaysArr.map(overlay => {
-//         overlay.style.opacity = 0.3
+//     innerCellsArr.map(innerCell => {
+//         innerCell.style.opacity = 0.3
 //     })
 //     hideElem(winLossAlertBoxDiv)
 //     showElem(startingPageDiv)

@@ -1,0 +1,36 @@
+#win-loss-box {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %hun;
+    .rel {
+        @extend %cxy;
+        position: relative;
+        @extend %hun;
+        .underlay {
+            @extend %hun;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            opacity: 0.4;
+        }
+        .box {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            padding: 40px;
+            font-size: 30px;
+            background-color: #000;
+            color: white;
+            .alert {
+                margin-bottom: 20px;
+            }
+            #play-again-btn {
+                padding: 10px;
+                background-color: blue;
+            }
+        }
+    }
+}

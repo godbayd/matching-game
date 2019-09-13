@@ -1,5 +1,5 @@
 import {showElem, hideElem} from './updateHtml'
-import {winLossAlertBoxDiv, winLossAlertDiv} from './htmlElements'
+import {winLossAlertBoxDiv} from './htmlElements'
 
 
 const alertMessage = decision => {
@@ -14,5 +14,5 @@ const alertMessage = decision => {
 
 
 export const appendAlertMessage = decision => {
-    winLossAlertDiv.innerHTML = alertMessage(decision)
+    winLossAlertBoxDiv.innerHTML = alertMessage(decision)
 }

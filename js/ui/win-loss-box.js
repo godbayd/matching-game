@@ -1,19 +1,30 @@
 import {select, selectAll} from './utils'
-import {winLossAlertBoxDiv} from './htmlElements'
-const t = new TimelineLite()
+import {
+    winLossAlertBoxDiv,
+    underlayDiv,
+    boxDiv,
+    alertDiv,
+    playAgainBtn
+} from './htmlElements'
 
-/*
-    #win-loss-box
-        .rel
-            .underlay
-            .box
-                .alert
-                #play-again-btn
-*/
+const t = TweenMax
 
-const underlay = select('#win-loss-box .underlay')
-const box = select('#win-loss-box .box')
-const alert = select('#win-loss-box .alert')
+export const enterWinLossBoxAnim = () => {
+    t.set(winLossAlertBoxDiv, {display: 'flex'})
+    t.to(underlayDiv, 0.3, {opacity: 0.5})
+    t.to(boxDiv, 0.3, {opacity: 1, y: '0%'}).delay(0.3)
+    t.to(alertDiv, 0.3, {opacity: 1}).delay(0.6)
+    t.to(playAgainBtn, 0.3, {opacity: 1}).delay(0.9)
+}
 
-t.set(winLossAlertBoxDiv, {display: 'flex'})
-t.to(winLossAlertBoxDiv, 0.5, {opacity: 1})
+export const exitWinLossBoxAnim = () => {
+    t.to(playAgainBtn, 0.3, {opacity: 0, y: '-100%'})
+    t.to(alertDiv, 0.3, {opacity: 0, y: '-100%'})
+    t.to(boxDiv, 0.3, {opacity: 0, y: '-50%'}).delay(0.3)
+    t.to(underlayDiv, 0.3, {opacity: 0}).delay(0.6)
+    // revert css
+    t.set(winLossAlertBoxDiv, {display: 'none'})
+    t.set(playAgainBtn, {y: '0%'})
+    t.set(alertDiv, {y: '0%'})
+    t.set(boxDiv, {y: '0%'})
+}

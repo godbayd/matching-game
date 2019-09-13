@@ -13,7 +13,6 @@ import {
     showElem,
     hideElem,
     intialTimeHtml,
-    innerCellsArr
 } from './updateHtml'
 import {
     cellsArr,
@@ -22,7 +21,8 @@ import {
     startingPageDiv,
     playAgainBtn,
     winLossAlertBoxDiv,
-    startBtnsArr
+    startBtnsArr,
+    innerCellsArr
 } from './htmlElements'
 import {
     handleDifficultyRadioButtonsClicks,

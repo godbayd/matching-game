@@ -26,5 +26,7 @@ export const secondsDiv = select('#top-bar .seconds')
 
 // win loss
 export const winLossAlertBoxDiv = select('#win-loss-box')
-export const winLossAlertDiv = select('#win-loss-box .alert')
+export const underlayDiv = select('#win-loss-box .underlay')
+export const boxDiv = select('#win-loss-box .box')
+export const alertDiv = select('#win-loss-box .alert')
 export const playAgainBtn = select('#play-again-btn')

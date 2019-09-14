@@ -1,6 +1,7 @@
 /*
     PLAY AGAIN FUNCTIONALITY NEEDS WORK
 */
+import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'
 import '../styles/main.scss'
 import {select, selectAll, c} from './utils'
@@ -30,6 +31,7 @@ import {
 } from './starting-page'
 import './ui/starting-page-ui'
 import {startTransition} from './ui/start-sequence'
+import './ui/win-loss-box'
 import './test'
 
 document.body.style.height = window.innerHeight + 'px'

@@ -1,4 +1,3 @@
-import {TweenMax} from "gsap/TweenMax";
 import {select, selectAll} from '../utils'
 import {
     startOptCon,

@@ -1,11 +1,11 @@
-import {select, selectAll} from './utils'
+import {select, selectAll} from '../utils'
 import {
     winLossAlertBoxDiv,
     underlayDiv,
     boxDiv,
     alertDiv,
     playAgainBtn
-} from './htmlElements'
+} from '../htmlElements'
 
 const t = TweenMax
 

@@ -1,8 +1,8 @@
 import {mainState, cellsState, resetAllGameState} from './gameState'
 import {cellsArr, innerCellsArr} from './htmlElements'
 import {timerInterval} from './timer'
-import {appendAlertMessage} from './win-loss-alert.js'
-
+import {appendAlertMessage} from './win-loss-alert'
+import {enterWinLossBoxAnim} from './ui/win-loss-box'
 
 const exposeHiddenNumber = e =>
     TweenMax.to(e, 0.3, {rotationX: 180});
@@ -44,13 +44,15 @@ export const handleCellClick = e => {
             if (hiddenNumberOfClicked === cellsState.firstClickedHiddenNumber) {
                 cellsState.matchedIndexesArr.push(cellsState.indexOfFirstClicked)
                 cellsState.matchedIndexesArr.push(indexOfClicked)
+
                 // win case
                 if (mainState.gameArr.length === cellsState.matchedIndexesArr.length) {
                     clearInterval(timerInterval)
                     resetAllGameState()
                     appendAlertMessage('win')
-                    // transition here
+                    enterWinLossBoxAnim()
                 }
+
                 exposeHiddenNumber(clickedInnerCell)
                 resetClickedState()
             }

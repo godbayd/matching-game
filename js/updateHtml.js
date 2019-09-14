@@ -2,8 +2,6 @@ import {
     hiddenNumberArr,
     minutesDiv,
     secondsDiv,
-    countdownBoxDiv,
-    overlaysArr
 } from './htmlElements'
 import {mainState} from './gameState'
 import {populateHiddenNumberCons} from './populateHiddenNumberCons'

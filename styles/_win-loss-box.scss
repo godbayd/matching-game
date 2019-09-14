@@ -5,8 +5,8 @@
     left: 0;
     @extend %hun;
     .rel {
-        @extend %cxy;
         position: relative;
+        @extend %cxy;
         @extend %hun;
         .underlay {
             opacity: 0;

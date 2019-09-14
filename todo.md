@@ -1,8 +1,11 @@
 # To Do
 
-## Problems
-- on starting page, on continuing round:
-    - if difficulty isnt clicked (if left from previous round). the timer doesnt roll out the correct time. This is because the correct timer is triggered on radio btn click
-
-## play again
-- [ ] fix reset timer
+- click listeners should only listen when animations are complete.
+    - flash hidden
+    - difficulty btns
+    - play again btn
+- clean up code
+- make responsive
+- fine tune animation
+- figure out deployment
+- deploy :)

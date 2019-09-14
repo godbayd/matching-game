@@ -4,6 +4,9 @@ import {select, selectAll} from './utils'
 export const hiddenNumberArr  = selectAll('#game-board .cell .back')
 export const cellsArr = selectAll('#game-board .cell')
 export const innerCellsArr = selectAll('#game-board .inner-cell')
+export const difficultyBtnsArr = selectAll('.difficulty-btn')
+export const difficultyBtnsTextArr = selectAll('.difficulty-btn .text')
+export const startOptConsArr = selectAll('.start-option-container')
 
 // game-board
 export const gameBoardPageDiv = select('#game-board')
@@ -15,8 +18,6 @@ export const mediumOptionBtn = select('#medium-opt-btn')
 export const hardOptionBtn = select('#hard-opt-btn')
 // ui
 export const startOptCon = select('.start-option-container')
-export const startOptConsArr = selectAll('.start-option-container')
-export const difficultyBtnsArr = selectAll('.difficulty-btn')
 export const startBtnsArr = selectAll('.start-game-btn')
 
 // timer bar

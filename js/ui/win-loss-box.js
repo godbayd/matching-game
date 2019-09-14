@@ -18,7 +18,7 @@ export const enterWinLossBoxAnim = () => {
     t.to(playAgainBtn, 0.3, {opacity: 1}).delay(0.9)
 }
 
-export const exitWinLossBoxAnim = () => {
+export const exitWinLossBoxAnim = (enterStartingPage) => {
     t.to(playAgainBtn, 0.3, {opacity: 0, y: '-100%'})
     t.to(alertDiv, 0.3, {opacity: 0, y: '-100%'})
     t.to(boxDiv, 0.3, {opacity: 0, y: '-50%'}).delay(0.3)
@@ -30,5 +30,7 @@ export const exitWinLossBoxAnim = () => {
         t.set(alertDiv, {y: '0%'})
         t.set(boxDiv, {y: '0%'})
         t.set(gameBoardPageDiv, {y: '0%'})
+        // enter starting page
+        enterStartingPage()
     }}).delay(0.6)
 }

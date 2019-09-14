@@ -33,9 +33,11 @@ import './ui/starting-page-ui'
 import {startTransition} from './ui/start-sequence'
 import {exitWinLossBoxAnim} from './ui/win-loss-box'
 import './ui/win-loss-box'
+import {enterStartingPage} from './test'
 import './test'
 
 document.body.style.height = window.innerHeight + 'px'
+enterStartingPage()
 
 // cells event listener
 // may need to do when cells exist
@@ -74,16 +76,11 @@ const main = e => {
 
 startBtnsArr.map(startBtn => startBtn.addEventListener('click', main))
 
-/*
-    NEEDS WORK
-*/
+
 playAgainBtn.addEventListener('click', e => {
     e.stopPropagation()
 
     console.log('clicked')
-    innerCellsArr.map(innerCell => {
-        innerCell.style.transform = 'rotateX(0deg)'
-    })
-    exitWinLossBoxAnim()
-    showElem(startingPageDiv)
+    TweenMax.set(innerCellsArr, {rotationX: 0})
+    exitWinLossBoxAnim(enterStartingPage)
 })

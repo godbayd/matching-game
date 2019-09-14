@@ -31,6 +31,7 @@ import {
 } from './starting-page'
 import './ui/starting-page-ui'
 import {startTransition} from './ui/start-sequence'
+import {exitWinLossBoxAnim} from './ui/win-loss-box'
 import './ui/win-loss-box'
 import './test'
 
@@ -76,11 +77,13 @@ startBtnsArr.map(startBtn => startBtn.addEventListener('click', main))
 /*
     NEEDS WORK
 */
-playAgainBtn.addEventListener('click', () => {
+playAgainBtn.addEventListener('click', e => {
+    e.stopPropagation()
+
     console.log('clicked')
     innerCellsArr.map(innerCell => {
         innerCell.style.transform = 'rotateX(0deg)'
     })
-    hideElem(winLossAlertBoxDiv)
+    exitWinLossBoxAnim()
     showElem(startingPageDiv)
 })

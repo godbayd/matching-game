@@ -33,7 +33,7 @@ import './ui/starting-page-ui'
 import {startTransition} from './ui/start-sequence'
 import {exitWinLossBoxAnim} from './ui/win-loss-box'
 import './ui/win-loss-box'
-import {enterStartingPage} from './test'
+import {enterStartingPage} from './ui/starting-page-transition'
 import './test'
 
 document.body.style.height = window.innerHeight + 'px'

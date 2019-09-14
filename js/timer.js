@@ -38,17 +38,15 @@ const timer = (startTimer, minutesDuration) => {
             const delta = performance.now() - start,
                   secondsElapsed = (minutesDuration * 60) - Math.floor(delta / 1000);
 
-            if (secondsElapsed > 0) {
+            if (secondsElapsed >= 0) {
                 // timer html here
                 timerHtml(formatTime(minutesDuration, secondsElapsed))
-            }
-
-            // loss condition
-            else {
-                clearInterval(timerInterval)
-                resetAllGameState()
-                appendAlertMessage('lose')
-                enterWinLossBoxAnim()
+                if (secondsElapsed === 0) {
+                    clearInterval(timerInterval)
+                    resetAllGameState()
+                    appendAlertMessage('lose')
+                    enterWinLossBoxAnim()
+                }
             }
 
         }, 1000)

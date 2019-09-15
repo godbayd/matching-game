@@ -6,7 +6,6 @@ import '../index.pug'
 import '../styles/main.scss'
 import {select, selectAll, c} from './utils'
 import genRandomNums from './genRandomNums'
-import {handleCellClick} from './handleCellClick'
 import {mainState} from './gameState'
 import {
     populateCellsWithHiddenNumbers,
@@ -37,12 +36,9 @@ import {enterStartingPage} from './ui/starting-page-transition'
 import './test'
 
 document.body.style.height = window.innerHeight + 'px'
+
+// initial render
 enterStartingPage()
-
-// cells event listener
-// may need to do when cells exist
-cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
-
 
 // difficulty buttons event listener
 difficultyBtnsArr.map(

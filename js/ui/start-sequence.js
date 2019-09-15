@@ -2,6 +2,7 @@ import {
     cellsArr, innerCellsArr, startingPageDiv, gameBoardPageDiv
 } from '../htmlElements'
 import {queueTimer} from '../starting-page'
+import {handleCellClick} from '../handleCellClick'
 
 /*
     - transition starting-page -> game-board
@@ -29,6 +30,10 @@ export const startTransition = () => {
     t.to(innerCellsArr, 0.3, {rotationX: 180})
     t.to(innerCellsArr, 0.3, {rotationX: 0, delay: 2})
 
-    t.add(() => queueTimer())
+    t.add(() => {
+        queueTimer()
+        // add cell listeners
+        cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
+    })
 
 }

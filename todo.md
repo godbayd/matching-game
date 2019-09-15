@@ -7,6 +7,3 @@
 
 ## done
 - [x] click listeners should only listen when animations are complete.
-- flash hidden
-- difficulty btns
-- play again btn

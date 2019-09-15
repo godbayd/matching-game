@@ -75,7 +75,6 @@ startBtnsArr.map(startBtn => startBtn.addEventListener('click', main))
 
 playAgainBtn.addEventListener('click', e => {
     e.stopPropagation()
-
     console.log('clicked')
     TweenMax.set(innerCellsArr, {rotationX: 0})
     exitWinLossBoxAnim(enterStartingPage)

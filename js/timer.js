@@ -41,12 +41,15 @@ const timer = (startTimer, minutesDuration) => {
             if (secondsElapsed >= 0) {
                 // timer html here
                 timerHtml(formatTime(minutesDuration, secondsElapsed))
+
+                // loss case
                 if (secondsElapsed === 0) {
                     clearInterval(timerInterval)
                     resetAllGameState()
                     appendAlertMessage('lose')
                     enterWinLossBoxAnim()
                 }
+
             }
 
         }, 1000)

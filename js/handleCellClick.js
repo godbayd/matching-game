@@ -51,6 +51,9 @@ export const handleCellClick = e => {
                     resetAllGameState()
                     appendAlertMessage('win')
                     enterWinLossBoxAnim()
+                    cellsArr.map(cell => {
+                        cell.removeEventListener('click', handleCellClick)
+                    })
                 }
 
                 exposeHiddenNumber(clickedInnerCell)

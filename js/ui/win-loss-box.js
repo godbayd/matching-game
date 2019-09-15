@@ -5,12 +5,18 @@ import {
     boxDiv,
     alertDiv,
     playAgainBtn,
-    gameBoardPageDiv
+    gameBoardPageDiv,
+    cellsArr
 } from '../htmlElements'
+// import {handleCellClick} from '../handleCellClick'
 
 const t = TweenMax
 
 export const enterWinLossBoxAnim = () => {
+
+    // remove cells click listeners
+    // cellsArr.removeEventListener('click', handleCellClick)
+
     t.set(winLossAlertBoxDiv, {display: 'flex'})
     t.to(underlayDiv, 0.3, {opacity: 0.5})
     t.to(boxDiv, 0.3, {opacity: 1, y: '0%'}).delay(0.3)

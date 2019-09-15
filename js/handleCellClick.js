@@ -22,7 +22,6 @@ const resetClickedState = () => {
 }
 
 export const handleCellClick = e => {
-
     const indexOfClicked = cellsArr.indexOf(e.currentTarget),
           hiddenNumberOfClicked = mainState.gameArr[indexOfClicked],
           alreadyClicked = cellsState.indexOfFirstClicked === indexOfClicked,

@@ -1,11 +1,10 @@
 import {mainState} from './gameState'
-import {startingPageDiv} from './htmlElements'
 import {
     startEasyTimer,
     startMediumTimer,
     startHardTimer
 } from './timer'
-import {hideElem, intialTimeHtml} from './updateHtml'
+
 
 /*
     radioBtn callback:

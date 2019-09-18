@@ -5,12 +5,12 @@ import {enterWinLossBoxAnim} from './ui/win-loss-box'
 import {handleCellClick} from './handleCellClick'
 import {cellsArr} from './htmlElements'
 
+
 export const durations = {
     easy: 2,
     medium: 1,
     hard: 0.5
 }
-
 
 let min = null
 let sec = null
@@ -26,7 +26,6 @@ const formatTime = (minutesDuration, secondsElapsed) => {
     const secOut = sec === 60 ? '00' : sec < 10 ? `0${sec}` : sec;
     return [min, secOut].map(a => a.toString());
 }
-
 
 export let timerInterval;
 
@@ -60,7 +59,6 @@ const timer = (startTimer, minutesDuration) => {
         }, 1000)
     }
 }
-
 
 export const startEasyTimer = () => timer(true, 2, durations.easy)
 export const startMediumTimer = () => timer(true, durations.medium)

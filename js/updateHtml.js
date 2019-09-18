@@ -7,11 +7,9 @@ import {mainState} from './gameState'
 import {populateHiddenNumberCons} from './populateHiddenNumberCons'
 import {durations} from './timer'
 
-
 // populate cells with hidden numbers
 export const populateCellsWithHiddenNumbers = () =>
     populateHiddenNumberCons(mainState.gameArr, hiddenNumberArr);
-
 
 // show / hide elems
 export const showElem = elem =>
@@ -19,7 +17,6 @@ export const showElem = elem =>
 
 export const hideElem = elem =>
     elem.style.display = 'none';
-
 
 // timer html
 export const intialTimeHtml = difficulty => {

@@ -6,7 +6,7 @@ const shuffle = knuthShuffle.knuthShuffle
 generates a shuffled array containing unique random numbers
 and in addition, a single duplicate of each unqiue random number.
 */
-const genRandomNums = (min, max, outputArrayLength) => {
+export const genRandomNums = (min, max, outputArrayLength) => {
 
    const randomInt = (min, max) =>
          Math.floor(Math.random() * (max - min + 1)) + min;
@@ -27,6 +27,3 @@ const genRandomNums = (min, max, outputArrayLength) => {
    return shuffledArrayWithDuplicates;
 
 }
-
-
-export default genRandomNums;

@@ -3,16 +3,10 @@ import {alertDiv} from './htmlElements'
 
 
 const alertMessage = decision => {
-    switch (decision) {
-        case 'win':
-            return 'You win!';
-        case 'lose':
-            return 'You lose.';
-        default: console.error('winLossAlert: wrong argument... must be "win" or "lose"');
-    }
+    return decision === 'win' ? 'You win!' :
+           decision === 'lose' ? 'You lose.' : false;
 }
 
 
-export const appendAlertMessage = decision => {
-    alertDiv.innerHTML = alertMessage(decision)
-}
+export const appendAlertMessage = decision =>
+    alertDiv.innerHTML = alertMessage(decision);

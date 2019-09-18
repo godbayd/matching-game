@@ -1,13 +1,9 @@
-import {select, selectAll} from '../utils'
 import {
-    startOptCon,
     startOptConsArr,
     difficultyBtnsArr,
-    startBtnsArr
+    startBtnsArr,
+    keepChoosingBtnsArr
 } from '../htmlElements'
-
-
-const keepChoosingBtnsArr = selectAll('.keep-choosing-btn')
 
 
 const handleStartBtnClick = e => {

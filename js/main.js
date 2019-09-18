@@ -1,42 +1,30 @@
-
-/*
-    PLAY AGAIN FUNCTIONALITY NEEDS WORK
-*/
 import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'
 import '../styles/main.scss'
-import {select, selectAll, c} from './utils'
-import genRandomNums from './genRandomNums'
+import {genRandomNums} from './genRandomNums'
 import {mainState} from './gameState'
 import {
     populateCellsWithHiddenNumbers,
     flashHiddenNumbers,
-    showElem,
-    hideElem,
-    intialTimeHtml,
+    intialTimeHtml
 } from './updateHtml'
 import {
-    cellsArr,
-    overlaysArr,
     difficultyBtnsArr,
-    startingPageDiv,
     playAgainBtn,
-    winLossAlertBoxDiv,
     startBtnsArr,
     innerCellsArr
 } from './htmlElements'
-import {
-    handleDifficultyRadioButtonsClicks,
-    queueTimer
-} from './starting-page'
-import './ui/starting-page-ui'
+import {handleDifficultyRadioButtonsClicks} from './starting-page'
 import {startTransition} from './ui/start-sequence'
 import {exitWinLossBoxAnim} from './ui/win-loss-box'
-import './ui/win-loss-box'
 import {enterStartingPage} from './ui/starting-page-transition'
+import './ui/starting-page-ui'
+import './ui/win-loss-box'
 import './test'
 
+
 document.body.style.height = window.innerHeight + 'px'
+
 
 // initial render
 enterStartingPage()
@@ -47,6 +35,7 @@ difficultyBtnsArr.map(
         'click', handleDifficultyRadioButtonsClicks
     )
 )
+
 
 const main = e => {
 
@@ -70,6 +59,7 @@ const main = e => {
     const diff = md === 1 ? 'easy' :
                  md === 2 ? 'medium' :
                  md === 3 ? 'hard' : false
+
     intialTimeHtml(diff)
 
     startTransition()

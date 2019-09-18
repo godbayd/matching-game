@@ -19,6 +19,7 @@ export const hardOptionBtn = select('#hard-opt-btn')
 // ui
 export const startOptCon = select('.start-option-container')
 export const startBtnsArr = selectAll('.start-game-btn')
+export const keepChoosingBtnsArr = selectAll('.keep-choosing-btn')
 
 // timer bar
 export const timerBarDiv = select('#top-bar')

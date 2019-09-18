@@ -1,4 +1,3 @@
-import {select, selectAll} from '../utils'
 import {
     winLossAlertBoxDiv,
     underlayDiv,

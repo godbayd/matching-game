@@ -18,7 +18,7 @@ import {handleDifficultyRadioButtonsClicks} from './starting-page'
 import {startTransition} from './ui/start-sequence'
 import {exitWinLossBoxAnim} from './ui/win-loss-box'
 import {enterStartingPage} from './ui/starting-page-transition'
-import './ui/starting-page-ui'
+import './ui/starting-page-events'
 import './ui/win-loss-box'
 import './test'
 

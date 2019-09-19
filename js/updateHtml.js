@@ -1,3 +1,7 @@
+/*
+    This module is code that updates the DOM
+    without animations
+*/
 import {
     hiddenNumberArr,
     minutesDiv,

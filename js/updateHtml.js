@@ -30,7 +30,7 @@ export const timerHtml = timeArr => {
     secondsDiv.innerHTML = seconds
 }
 
-
+// append alert message in win/loss case
 export const appendAlertMessage = decision => {
     const alertString = decision === 'win' ? 'You win!' :
                         decision === 'lose' ? 'You lose.' : false

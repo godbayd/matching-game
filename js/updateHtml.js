@@ -6,6 +6,7 @@ import {
     hiddenNumberArr,
     minutesDiv,
     secondsDiv,
+    alertDiv
 } from './htmlElements'
 import {mainState} from './gameState'
 import {populateHiddenNumberCons} from './populateHiddenNumberCons'
@@ -27,4 +28,11 @@ export const timerHtml = timeArr => {
     const seconds = timeArr[1]
     minutesDiv.innerHTML = minutes
     secondsDiv.innerHTML = seconds
+}
+
+
+export const appendAlertMessage = decision => {
+    const alertString = decision === 'win' ? 'You win!' :
+                        decision === 'lose' ? 'You lose.' : false
+    alertDiv.innerHTML = alertString
 }

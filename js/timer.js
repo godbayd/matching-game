@@ -1,6 +1,6 @@
 import {resetAllGameState} from './gameState'
 import {timerHtml} from './updateHtml'
-import {appendAlertMessage} from './win-loss-alert'
+import {appendAlertMessage} from './updateHtml'
 import {enterWinLossBoxAnim} from './ui/win-loss-box'
 import {handleCellClick} from './handleCellClick'
 import {cellsArr} from './htmlElements'

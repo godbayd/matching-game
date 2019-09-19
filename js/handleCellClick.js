@@ -1,7 +1,7 @@
 import {mainState, cellsState, resetAllGameState} from './gameState'
 import {cellsArr, innerCellsArr} from './htmlElements'
 import {timerInterval} from './timer'
-import {appendAlertMessage} from './win-loss-alert'
+import {appendAlertMessage} from './updateHtml'
 import {enterWinLossBoxAnim} from './ui/win-loss-box'
 
 const exposeHiddenNumber = e =>

@@ -3,7 +3,7 @@ import {
     difficultyBtnsArr,
     startBtnsArr,
     keepChoosingBtnsArr
-} from '../htmlElements'
+} from './htmlElements'
 
 
 const handleStartBtnClick = e => {

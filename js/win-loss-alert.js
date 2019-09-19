@@ -1,4 +1,3 @@
-import {showElem, hideElem} from './updateHtml'
 import {alertDiv} from './htmlElements'
 
 

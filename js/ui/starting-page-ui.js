@@ -16,10 +16,10 @@ const handleBtnClick = e => {
 
     e.stopPropagation()
 
-    const indexOfCurrent = difficultyBtnsArr.indexOf(e.currentTarget)
-    const currentStartOptCon = startOptConsArr[indexOfCurrent]
-    const currentStartBtn = startBtnsArr[indexOfCurrent]
-    const currentKeepChoosingBtn = keepChoosingBtnsArr[indexOfCurrent]
+    const indexOfCurrent = difficultyBtnsArr.indexOf(e.currentTarget),
+          currentStartOptCon = startOptConsArr[indexOfCurrent],
+          currentStartBtn = startBtnsArr[indexOfCurrent],
+          currentKeepChoosingBtn = keepChoosingBtnsArr[indexOfCurrent]
 
     const notClicked = difficultyBtnsArr.map((btn, n) => {
         return btn !== e.currentTarget ? startOptConsArr[n] : false

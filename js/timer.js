@@ -27,7 +27,9 @@ const formatTime = (minutesDuration, secondsElapsed) => {
     return [min, secOut].map(a => a.toString());
 }
 
-export let timerInterval;
+export const clearTimer = () => timer(false)
+
+let timerInterval;
 
 const timer = (startTimer, minutesDuration) => {
     min = null
@@ -45,7 +47,7 @@ const timer = (startTimer, minutesDuration) => {
 
                 // loss case
                 if (secondsElapsed === 0) {
-                    clearInterval(timerInterval)
+                    clearTimer()
                     resetAllGameState()
                     appendAlertMessage('lose')
                     enterWinLossBoxAnim()
@@ -63,4 +65,3 @@ const timer = (startTimer, minutesDuration) => {
 export const startEasyTimer = () => timer(true, 2, durations.easy)
 export const startMediumTimer = () => timer(true, durations.medium)
 export const startHardTimer = () => timer(true, 0.5, durations.hard)
-export const stopTimer = () => timer(false)

@@ -1,6 +1,6 @@
 import {mainState, cellsState, resetAllGameState} from './gameState'
 import {cellsArr, innerCellsArr} from './htmlElements'
-import {timerInterval} from './timer'
+import {clearTimer} from './timer'
 import {appendAlertMessage} from './updateHtml'
 import {enterWinLossBoxAnim} from './ui/win-loss-box'
 
@@ -46,7 +46,7 @@ export const handleCellClick = e => {
 
                 // win case
                 if (mainState.gameArr.length === cellsState.matchedIndexesArr.length) {
-                    clearInterval(timerInterval)
+                    stopTimer()
                     resetAllGameState()
                     appendAlertMessage('win')
                     enterWinLossBoxAnim()

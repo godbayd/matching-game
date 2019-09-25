@@ -1,5 +1,10 @@
 # To Do
 
+## when you get back
+ - [ ] fix backBtn timer issue
+ - [ ] create confirmation prompt with are you sure (yes / no) for exiting the game when backBtn is clicked
+ - [ ] make a tranisition file in /ui/ dir for transition from gameBoardPageDiv to enterStartingPage
+
 ## Clean Up Code
 - [ ] clean up code
     - clean up(refactor) file then remove unused imports

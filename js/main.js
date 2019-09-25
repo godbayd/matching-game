@@ -1,3 +1,8 @@
+/*
+    ISSUE:
+        if backBtn is clicked before timer starts... when a new game
+        is initiated, the timer is inaccurate.
+*/
 import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'
 import '../styles/main.scss'
@@ -13,13 +18,14 @@ import {
     playAgainBtn,
     startBtnsArr,
     innerCellsArr,
-    backBtn
+    backBtn,
+    gameBoardPageDiv
 } from './htmlElements'
 import {handleDifficultyRadioButtonsClicks} from './starting-page'
 import {startTransition} from './ui/start-sequence'
 import {exitWinLossBoxAnim} from './ui/win-loss-box'
 import {enterStartingPage} from './ui/starting-page-transition'
-import {stopTimer} from './timer'
+import {clearTimer} from './timer'
 import './starting-page-events'
 import './ui/win-loss-box'
 import './test'
@@ -91,5 +97,23 @@ playAgainBtn.addEventListener('click', e => {
 
 
 backBtn.addEventListener('click', e => {
-    stopTimer()
+
+    e.stopPropagation()
+
+    clearTimer()
+
+    TweenMax.set(innerCellsArr, {rotationX: 0})
+
+    // difficulty buttons click listeners
+    difficultyBtnsArr.map(
+        diffBtn => diffBtn.addEventListener(
+            'click', handleDifficultyRadioButtonsClicks
+        )
+    )
+
+    TweenMax.to(gameBoardPageDiv, 0.3, {y: '-50%', opacity: 0, onComplete: () => {
+        TweenMax.set(gameBoardPageDiv, {y: '0%'})
+        enterStartingPage()
+    }})
+
 })

@@ -46,7 +46,7 @@ export const handleCellClick = e => {
 
                 // win case
                 if (mainState.gameArr.length === cellsState.matchedIndexesArr.length) {
-                    stopTimer()
+                    clearTimer()
                     resetAllGameState()
                     appendAlertMessage('win')
                     enterWinLossBoxAnim()

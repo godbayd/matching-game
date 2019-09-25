@@ -52,14 +52,16 @@ body {
 }
 
 #top-bar {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     margin-bottom: $gap;
+    .back-btn {
+        float: left; // use floats here because flex breaks in ios
+        position: absolute;
+    }
     .time-display {
+        float: right;
         display: flex;
     }
-    border: 1px solid red;
 }
 
 @import './game-board';

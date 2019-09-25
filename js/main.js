@@ -12,12 +12,14 @@ import {
     difficultyBtnsArr,
     playAgainBtn,
     startBtnsArr,
-    innerCellsArr
+    innerCellsArr,
+    backBtn
 } from './htmlElements'
 import {handleDifficultyRadioButtonsClicks} from './starting-page'
 import {startTransition} from './ui/start-sequence'
 import {exitWinLossBoxAnim} from './ui/win-loss-box'
 import {enterStartingPage} from './ui/starting-page-transition'
+import {stopTimer} from './timer'
 import './starting-page-events'
 import './ui/win-loss-box'
 import './test'
@@ -85,4 +87,9 @@ playAgainBtn.addEventListener('click', e => {
 
     exitWinLossBoxAnim(enterStartingPage)
 
+})
+
+
+backBtn.addEventListener('click', e => {
+    stopTimer()
 })

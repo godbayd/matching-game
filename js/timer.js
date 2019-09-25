@@ -32,7 +32,7 @@ export let timerInterval;
 const timer = (startTimer, minutesDuration) => {
     min = null
     sec = null
-    if (!startTimer) clearInterval(timer);
+    if (!startTimer) clearInterval(timerInterval);
     else {
         const start = performance.now()
         timerInterval = setInterval(() => {

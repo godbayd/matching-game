@@ -25,6 +25,7 @@ export const keepChoosingBtnsArr = selectAll('.keep-choosing-btn')
 export const timerBarDiv = select('#top-bar')
 export const minutesDiv = select('#top-bar .minutes')
 export const secondsDiv = select('#top-bar .seconds')
+export const backBtn = select('#back-btn')
 
 // win loss
 export const winLossAlertBoxDiv = select('#win-loss-box')

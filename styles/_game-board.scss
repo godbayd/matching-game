@@ -16,18 +16,16 @@
             &:nth-child(odd) { margin-right: $gap; }
             @extend %hun;
             perspective: calc(100vh / 6);
-            // &:hover .inner-cell {
-            //     transform: rotateX(180deg);
-            // }
-            // overflow: hidden;
             .inner-cell {
                 position: relative;
                 @extend %hun;
                 // transition: transform ease 300ms;
+                -webkit-transform-style: preserve-3d;
                 transform-style: preserve-3d;
                 .front, .back {
                     position: absolute;
                     @extend %hun;
+                    -webkit-backface-visibility: hidden;
                     backface-visibility: hidden;
                 }
                 .front {

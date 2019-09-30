@@ -33,3 +33,11 @@ export const underlayDiv = select('#win-loss-box .underlay')
 export const boxDiv = select('#win-loss-box .box')
 export const alertDiv = select('#win-loss-box .alert')
 export const playAgainBtn = select('#play-again-btn')
+
+// confirm exit
+export const confirmExitBoxDiv = select('#confirm-exit-box')
+export const ceBoxDiv = select('#confirm-exit-box .box')
+export const ceUnderlayDiv = select('#confirm-exit-box .underlay')
+export const promtTextDiv = select('#confirm-exit-box .promt-text')
+export const exitYesBtnDiv = select('#exit-yes-btn')
+export const exitNoDiv = select('#exit-no-btn')

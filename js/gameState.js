@@ -23,5 +23,5 @@ export const resetAllGameState = () => {
 }
 
 export const timerState = {
-    start: false
+    okToStart: false
 }

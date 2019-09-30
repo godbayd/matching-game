@@ -4,6 +4,7 @@ import {appendAlertMessage} from './updateHtml'
 import {enterWinLossBoxAnim} from './ui/win-loss-box'
 import {handleCellClick} from './handleCellClick'
 import {cellsArr} from './htmlElements'
+import {timerState} from './gameState'
 
 
 export const durations = {
@@ -36,29 +37,31 @@ const timer = (startTimer, minutesDuration) => {
     sec = null
     if (!startTimer) clearInterval(timerInterval);
     else {
-        const start = performance.now()
-        timerInterval = setInterval(() => {
-            const delta = performance.now() - start,
-                  secondsElapsed = (minutesDuration * 60) - Math.floor(delta / 1000);
+        if (timerState.okToStart) {
+            const start = performance.now()
+            timerInterval = setInterval(() => {
+                const delta = performance.now() - start,
+                secondsElapsed = (minutesDuration * 60) - Math.floor(delta / 1000);
 
-            if (secondsElapsed >= 0) {
-                // timer html here
-                timerHtml(formatTime(minutesDuration, secondsElapsed))
+                if (secondsElapsed >= 0) {
+                    // timer html here
+                    timerHtml(formatTime(minutesDuration, secondsElapsed))
 
-                // loss case
-                if (secondsElapsed === 0) {
-                    clearTimer()
-                    resetAllGameState()
-                    appendAlertMessage('lose')
-                    enterWinLossBoxAnim()
-                    cellsArr.map(cell => {
-                        cell.removeEventListener('click', handleCellClick)
-                    })
+                    // loss case
+                    if (secondsElapsed === 0) {
+                        clearTimer()
+                        resetAllGameState()
+                        appendAlertMessage('lose')
+                        enterWinLossBoxAnim()
+                        cellsArr.map(cell => {
+                            cell.removeEventListener('click', handleCellClick)
+                        })
+                    }
+
                 }
 
-            }
-
-        }, 1000)
+            }, 1000)
+        }
     }
 }
 

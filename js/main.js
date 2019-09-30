@@ -11,7 +11,7 @@
 /*
     possible solution:
         keep state and only if state is right, start timer. This way, the timer
-        can be kept from firing altogether. The problem seems to be that timer 
+        can be kept from firing altogether. The problem seems to be that timer
         is still being called after timeout is cleared
 */
 import {TweenMax} from "gsap/TweenMax";
@@ -37,6 +37,7 @@ import {startTransition} from './ui/start-sequence'
 import {exitWinLossBoxAnim} from './ui/win-loss-box'
 import {enterStartingPage} from './ui/starting-page-transition'
 import {clearTimer} from './timer'
+import {timerState} from './gameState'
 import './starting-page-events'
 import './ui/win-loss-box'
 import './test'
@@ -59,6 +60,8 @@ difficultyBtnsArr.map(
 const main = e => {
 
     e.stopPropagation()
+
+    timerState.okToStart = true
 
     // remove difficulty buttons event listener
     difficultyBtnsArr.map(
@@ -110,6 +113,8 @@ playAgainBtn.addEventListener('click', e => {
 backBtn.addEventListener('click', e => {
 
     e.stopPropagation()
+
+    timerState.okToStart = false
 
     clearTimer()
 

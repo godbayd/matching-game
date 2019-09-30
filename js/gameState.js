@@ -21,3 +21,7 @@ export const resetAllGameState = () => {
     mainState.resetState()
     cellsState.resetState()
 }
+
+export const timerState = {
+    start: false
+}

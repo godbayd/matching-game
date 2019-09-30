@@ -3,6 +3,17 @@
         if backBtn is clicked before timer starts... when a new game
         is initiated, the timer is inaccurate.
 */
+/*
+    what i want:
+        before timer starts -> just transition back to startingPage
+        before timer starts -> prompt confirm end current game and then transition back to startPage
+*/
+/*
+    possible solution:
+        keep state and only if state is right, start timer. This way, the timer
+        can be kept from firing altogether. The problem seems to be that timer 
+        is still being called after timeout is cleared
+*/
 import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'
 import '../styles/main.scss'

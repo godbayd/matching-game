@@ -61,6 +61,8 @@ const timer = (startTimer, minutesDuration) => {
                 }
 
             }, 1000)
+            
+            timerState.started = true
         }
     }
 }

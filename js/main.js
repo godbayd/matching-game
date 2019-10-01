@@ -1,12 +1,14 @@
 /*
-    ISSUE:
-        if backBtn is clicked before timer starts... when a new game
-        is initiated, the timer is inaccurate.
-*/
-/*
     what i want:
         before timer starts -> just transition back to startingPage
         before timer starts -> prompt confirm end current game and then transition back to startPage
+*/
+
+/*
+    to do:
+        - transition from gameBoard to startPage
+        - rename winloss box's common names with confirm exit
+
 */
 import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'
@@ -24,7 +26,14 @@ import {
     startBtnsArr,
     innerCellsArr,
     backBtn,
-    gameBoardPageDiv
+    gameBoardPageDiv,
+    // confirm exit
+    confirmExitBoxDiv,
+    ceBoxDiv,
+    ceUnderlayDiv,
+    promtTextDiv,
+    exitYesBtn,
+    exitNoBtn
 } from './htmlElements'
 import {handleDifficultyRadioButtonsClicks} from './starting-page'
 import {startTransition} from './ui/start-sequence'
@@ -34,6 +43,7 @@ import {clearTimer} from './timer'
 import {timerState} from './gameState'
 import './starting-page-events'
 import './ui/win-loss-box'
+import './ui/confirm-exit'
 import './test'
 
 
@@ -108,22 +118,31 @@ backBtn.addEventListener('click', e => {
 
     e.stopPropagation()
 
-    timerState.okToStart = false
+    if (!timerState.started) {
 
-    clearTimer()
+        timerState.okToStart = false
 
-    TweenMax.set(innerCellsArr, {rotationX: 0})
+        clearTimer()
 
-    // difficulty buttons click listeners
-    difficultyBtnsArr.map(
-        diffBtn => diffBtn.addEventListener(
-            'click', handleDifficultyRadioButtonsClicks
+        TweenMax.set(innerCellsArr, {rotationX: 0})
+
+        // difficulty buttons click listeners
+        difficultyBtnsArr.map(
+            diffBtn => diffBtn.addEventListener(
+                'click', handleDifficultyRadioButtonsClicks
+            )
         )
-    )
 
-    TweenMax.to(gameBoardPageDiv, 0.3, {y: '-50%', opacity: 0, onComplete: () => {
-        TweenMax.set(gameBoardPageDiv, {y: '0%'})
-        enterStartingPage()
-    }})
+        TweenMax.to(gameBoardPageDiv, 0.3, {y: '-50%', opacity: 0, onComplete: () => {
+            TweenMax.set(gameBoardPageDiv, {y: '0%'})
+            enterStartingPage()
+        }})
+
+    } else {
+        // animate in confirmExitBoxDiv
+        // add listeners
+        // define event handler functions
+        // timerState.started may need to be reset in multiple places
+    }
 
 })

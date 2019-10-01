@@ -1,4 +1,5 @@
 #confirm-exit-box {
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -7,8 +8,8 @@
         // padding: 40px;
         @extend %cxy;
         .underlay {
-            // opacity: 0;
-            opacity: 0.3;
+            opacity: 0;
+            // opacity: 0.3;
             @extend %hun;
             position: absolute;
             top: 0;
@@ -16,6 +17,8 @@
             background-color: white;
         }
         .box {
+            opacity: 0;
+            transform: translateY(50%);
             display: flex;
             flex-direction: column;
             position: absolute;
@@ -25,15 +28,17 @@
             color: white;
             max-width: calc(100vw - 80px);
             .prompt-text {
+                opacity: 0;
                 margin-bottom: 20px;
             }
             .btns-container {
                 display: flex;
-                justify-content: center;    
+                justify-content: center;
                 width: 100%;
                 #exit-yes-btn { margin-right: 20px; }
                 #exit-yes-btn,
                 #exit-no-btn {
+                    opacity: 0;
                     display: inline-block;
                     padding: 10px;
                     background-color: blue;

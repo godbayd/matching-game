@@ -33,7 +33,7 @@ import {
     ceUnderlayDiv,
     promtTextDiv,
     exitYesBtn,
-    exitNoBtn
+    exitNoBtn,
 } from './htmlElements'
 import {handleDifficultyRadioButtonsClicks} from './starting-page'
 import {startTransition} from './ui/start-sequence'
@@ -41,9 +41,12 @@ import {exitWinLossBoxAnim} from './ui/win-loss-box'
 import {enterStartingPage} from './ui/starting-page-transition'
 import {clearTimer} from './timer'
 import {timerState} from './gameState'
+import {
+    enterConfirmExitBoxAnim,
+    exitConfirmExitBoxAnim
+} from './ui/confirm-exit'
 import './starting-page-events'
 import './ui/win-loss-box'
-import './ui/confirm-exit'
 import './test'
 
 
@@ -143,6 +146,30 @@ backBtn.addEventListener('click', e => {
         // add listeners
         // define event handler functions
         // timerState.started may need to be reset in multiple places
+
+        enterConfirmExitBoxAnim()
+
+        exitYesBtn.addEventListener('click', () => {
+
+            clearTimer()
+
+            TweenMax.set(innerCellsArr, {rotationX: 0})
+
+            // difficulty buttons click listeners
+            difficultyBtnsArr.map(
+                diffBtn => diffBtn.addEventListener(
+                    'click', handleDifficultyRadioButtonsClicks
+                )
+            )
+
+            exitConfirmExitBoxAnim(enterStartingPage)
+
+        })
+
+        exitNoBtn.addEventListener('click', () => {
+            
+        })
+
     }
 
 })

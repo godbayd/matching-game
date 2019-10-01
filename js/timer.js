@@ -49,6 +49,7 @@ const timer = (startTimer, minutesDuration) => {
 
                     // loss case
                     if (secondsElapsed === 0) {
+                        timerState.started = false
                         clearTimer()
                         resetAllGameState()
                         appendAlertMessage('lose')
@@ -61,7 +62,7 @@ const timer = (startTimer, minutesDuration) => {
                 }
 
             }, 1000)
-            
+
             timerState.started = true
         }
     }

@@ -4,7 +4,7 @@ import {
     startBtnsArr,
     keepChoosingBtnsArr
 } from './htmlElements'
-
+import {timerState} from './gameState'
 
 const handleStartBtnClick = e => {
     e.stopPropagation()
@@ -15,6 +15,8 @@ const handleStartBtnClick = e => {
 const handleBtnClick = e => {
 
     e.stopPropagation()
+
+    timerState.started = false
 
     const indexOfCurrent = difficultyBtnsArr.indexOf(e.currentTarget),
           currentStartOptCon = startOptConsArr[indexOfCurrent],

@@ -43,7 +43,8 @@ import {clearTimer} from './timer'
 import {timerState} from './gameState'
 import {
     enterConfirmExitBoxAnim,
-    exitConfirmExitBoxAnim
+    exitConfirmExitBoxAnim,
+    backToGameAnim
 } from './ui/confirm-exit'
 import './starting-page-events'
 import './ui/win-loss-box'
@@ -167,7 +168,7 @@ backBtn.addEventListener('click', e => {
         })
 
         exitNoBtn.addEventListener('click', () => {
-            
+            backToGameAnim()
         })
 
     }

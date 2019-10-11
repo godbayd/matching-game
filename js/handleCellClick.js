@@ -1,5 +1,5 @@
 import {mainState, cellsState, resetAllGameState} from './gameState'
-import {cellsArr, innerCellsArr} from './htmlElements'
+import {cellsArr, innerCellsArr, playAgainBtn} from './htmlElements'
 import {clearTimer} from './timer'
 import {appendAlertMessage} from './updateHtml'
 import {enterWinLossBoxAnim} from './ui/win-loss-box'

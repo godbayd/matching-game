@@ -10,6 +10,10 @@
         - rename winloss box's common names with confirm exit
         - ** For exitYes/NoBtn, event handlers need to be removed accordingly
         - clean up code
+        - remove listeners
+            - startBtnsArr
+            - playAgainBtn
+            - backBtn
 */
 import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'
@@ -100,8 +104,7 @@ const main = e => {
 
 startBtnsArr.map(startBtn => startBtn.addEventListener('click', main))
 
-
-playAgainBtn.addEventListener('click', e => {
+const handlePlayAgainBtnClick = e => {
 
     e.stopPropagation()
 
@@ -116,7 +119,10 @@ playAgainBtn.addEventListener('click', e => {
 
     exitWinLossBoxAnim(enterStartingPage)
 
-})
+}
+
+
+playAgainBtn.addEventListener('click', handlePlayAgainBtnClick)
 
 const handleExitYesBtnClick = e => {
     clearTimer()

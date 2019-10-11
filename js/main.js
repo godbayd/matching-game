@@ -118,6 +118,26 @@ playAgainBtn.addEventListener('click', e => {
 
 })
 
+const handleExitYesBtnClick = e => {
+    clearTimer()
+
+    TweenMax.set(innerCellsArr, {rotationX: 0})
+
+    // difficulty buttons click listeners
+    difficultyBtnsArr.map(
+        diffBtn => diffBtn.addEventListener(
+            'click', handleDifficultyRadioButtonsClicks
+        )
+    )
+
+    exitConfirmExitBoxAnim(enterStartingPage)
+    exitYesBtn.removeEventListener('click', handleExitYesBtnClick)
+}
+
+const handleExitNoBtnClick = e => {
+    backToGameAnim()
+    exitNoBtn.removeEventListener('click', handleExitNoBtnClick)
+}
 
 backBtn.addEventListener('click', e => {
 
@@ -151,26 +171,9 @@ backBtn.addEventListener('click', e => {
 
         enterConfirmExitBoxAnim()
 
-        exitYesBtn.addEventListener('click', () => {
+        exitYesBtn.addEventListener('click', handleExitYesBtnClick)
 
-            clearTimer()
-
-            TweenMax.set(innerCellsArr, {rotationX: 0})
-
-            // difficulty buttons click listeners
-            difficultyBtnsArr.map(
-                diffBtn => diffBtn.addEventListener(
-                    'click', handleDifficultyRadioButtonsClicks
-                )
-            )
-
-            exitConfirmExitBoxAnim(enterStartingPage)
-
-        })
-
-        exitNoBtn.addEventListener('click', () => {
-            backToGameAnim()
-        })
+        exitNoBtn.addEventListener('click', handleExitNoBtnClick )
 
     }
 

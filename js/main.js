@@ -15,6 +15,13 @@
             - playAgainBtn
             - backBtn
 */
+/*
+    play again btn remove listener needs to be added dynamically.
+    right now it wont work passed first session
+    - im guessing all listeners initialized in main will have this issue
+    POSSIBLE SOLUTION:
+        - add listeners in win/loss conditions
+*/
 import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'
 import '../styles/main.scss'
@@ -118,7 +125,7 @@ const handlePlayAgainBtnClick = e => {
     )
 
     exitWinLossBoxAnim(enterStartingPage)
-
+    playAgainBtn.removeEventListener('click', handlePlayAgainBtnClick)
 }
 
 

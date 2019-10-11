@@ -9,7 +9,7 @@
         - transition from gameBoard to startPage
         - rename winloss box's common names with confirm exit
         - ** For exitYes/NoBtn, event handlers need to be removed accordingly
-
+        - clean up code
 */
 import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'

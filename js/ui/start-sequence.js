@@ -32,8 +32,6 @@ export const startTransition = () => {
 
     t.add(() => {
         queueTimer()
-        // add cell listeners
-        cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
     })
 
 }

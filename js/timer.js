@@ -34,6 +34,9 @@ export const clearTimer = () => timer(false)
 let timerInterval;
 
 const timer = (startTimer, minutesDuration) => {
+
+    cellsArr.map(cell => cell.addEventListener('click', handleCellClick))
+    
     min = null
     sec = null
     if (!startTimer) clearInterval(timerInterval);

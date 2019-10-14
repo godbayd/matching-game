@@ -4,6 +4,7 @@ import {clearTimer} from './timer'
 import {appendAlertMessage} from './updateHtml'
 import {enterWinLossBoxAnim} from './ui/win-loss-box'
 import {timerState} from './gameState'
+import {handlePlayAgainBtnClick} from './eventHandlers'
 
 const exposeHiddenNumber = e =>
     TweenMax.to(e, 0.3, {rotationX: 180});
@@ -51,6 +52,7 @@ export const handleCellClick = e => {
                     clearTimer()
                     resetAllGameState()
                     appendAlertMessage('win')
+                    playAgainBtn.addEventListener('click', handlePlayAgainBtnClick)
                     enterWinLossBoxAnim()
                     cellsArr.map(cell => {
                         cell.removeEventListener('click', handleCellClick)

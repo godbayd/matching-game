@@ -5,6 +5,7 @@ import {enterWinLossBoxAnim} from './ui/win-loss-box'
 import {handleCellClick} from './handleCellClick'
 import {cellsArr} from './htmlElements'
 import {timerState} from './gameState'
+import {handlePlayAgainBtnClick} from './eventHandlers'
 
 
 export const durations = {
@@ -53,6 +54,7 @@ const timer = (startTimer, minutesDuration) => {
                         clearTimer()
                         resetAllGameState()
                         appendAlertMessage('lose')
+                        playAgainBtn.addEventListener('click', handlePlayAgainBtnClick)
                         enterWinLossBoxAnim()
                         cellsArr.map(cell => {
                             cell.removeEventListener('click', handleCellClick)

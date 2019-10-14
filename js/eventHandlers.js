@@ -2,21 +2,15 @@ import {genRandomNums} from './genRandomNums'
 import {mainState} from './gameState'
 import {
     populateCellsWithHiddenNumbers,
-    flashHiddenNumbers,
     intialTimeHtml
 } from './updateHtml'
 import {
     difficultyBtnsArr,
     playAgainBtn,
-    startBtnsArr,
     innerCellsArr,
-    backBtn,
     gameBoardPageDiv,
     // confirm exit
     confirmExitBoxDiv,
-    ceBoxDiv,
-    ceUnderlayDiv,
-    promtTextDiv,
     exitYesBtn,
     exitNoBtn,
 } from './htmlElements'

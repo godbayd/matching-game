@@ -1,5 +1,5 @@
 import {
-    cellsArr, innerCellsArr, startingPageDiv, gameBoardPageDiv
+    innerCellsArr, startingPageDiv, gameBoardPageDiv
 } from '../htmlElements'
 import {queueTimer} from '../starting-page'
 import {handleCellClick} from '../handleCellClick'

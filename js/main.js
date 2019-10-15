@@ -1,7 +1,3 @@
-/*
-    ISSUE:
-        when game is restarted too many times, timer is broken
-*/
 import {TweenMax} from "gsap/TweenMax";
 import '../index.pug'
 import '../styles/main.scss'
@@ -20,7 +16,6 @@ import {
 } from './eventHandlers.js'
 import './starting-page-events'
 import './ui/win-loss-box'
-import './test'
 
 
 // initial render
